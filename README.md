@@ -5,13 +5,16 @@ Machine learning is a subset of artificial intelligence (AI) that allows compute
 
 Here are some examples of how machine learning is being used in healthcare:
 
-Diagnosing Diseases: Machine learning algorithms can be trained to analyze medical images and identify patterns that indicate the presence of a disease. For example, ML can be used to identify early signs of cancer in mammograms, diagnose diabetic retinopathy in eye scans, and detect lung diseases in CT scans.
+
 
 1) Predicting Patient Outcomes: Machine learning algorithms can be used to analyze patient data to predict the likelihood of certain outcomes. For example, ML can be used to predict which patients are at high risk of developing sepsis, heart attacks or strokes, allowing healthcare professionals to intervene early and prevent these outcomes.
 
 2) Personalized Treatment Plans: Machine learning algorithms can be used to analyze patient data to create personalized treatment plans. For example, ML can be used to predict which medication or treatment is likely to be most effective for a patient based on their medical history, genetics, and other factors.
 
 3) Drug Discovery: Machine learning algorithms can be used to analyze vast amounts of data on drug interactions, chemical structures, and patient outcomes to help pharmaceutical companies identify new drugs that could be effective for certain diseases.
+
+4) Diagnosing Diseases: Machine learning algorithms can be trained to analyze medical images and identify patterns that indicate the presence of a disease. For example, ML can be used to identify early signs of cancer in mammograms, diagnose diabetic retinopathy in eye scans, and detect lung diseases in CT scans.
+
 
 Overall, machine learning has the potential to revolutionize healthcare by providing more accurate and personalized care to patients, improving patient outcomes, and reducing healthcare costs. However, there are also concerns around privacy, data security, and the ethical use of machine learning in healthcare.
 
