@@ -1,43 +1,16 @@
 {%extends 'index.html'%}
 
 {%block content%}
-<h1 class="display-3 mx-3">Bone Fracture Detection  <h2>(Accuracy : #%)</h1>
-<!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    </ol>
-    <div class="carousel-inner">
-      <center><div class="carousel-item active">
-        <img class="d-block w-75" src="static/bone1.jpg" alt="First slide">
-        <div class="carousel-caption d-none d-md-block">
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-75" src="static\bone2.jpg" alt="Second slide">
-        <div class="carousel-caption d-none d-md-block">
-        </div>
-      </div>
-    </center>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
- -->
- <div class="bg-image hover-overlay ripple my-3 mx-3" style="display:flex;align-items:center;justify-content:center;">
-  
+<h1 class="display-3 mx-3">Bone Fracture Detection <h2>(Accuracy : #%)</h1>
+<div class="bg-image hover-overlay ripple my-3 mx-3" style="display:flex;align-items:center;justify-content:center;">
+
 
   <img src="static\bone1.jpg" class="img w-50 " style="border-radius:50px;" />
   <blockquote class="blockquote text-left my-3 mx-3">
-   <center> <footer style="color: red;">Bone Fracture 🦴</footer></center>
-    <p >COVID-19 is a highly contagious respiratory illness caused by the SARS-CoV-2 virus. It was first
+    <center>
+      <footer style="color: red;">Bone Fracture 🦴</footer>
+    </center>
+    <p>COVID-19 is a highly contagious respiratory illness caused by the SARS-CoV-2 virus. It was first
       identified in Wuhan, China in December 2019 and has since become a global pandemic.</p><br>
     <p>
       Symptoms of COVID-19 can range from mild to severe, and include fever, cough, shortness of breath, fatigue, body
@@ -68,17 +41,18 @@
 
 <hr>
 <center>
-<form action="{{url_for('getbone')}}" method="post" enctype="multipart/form-data">
+  <form action="{{url_for('getbone')}}" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label for="exampleFormControlFile1">Upload Bone X-Ray Image </label>
       <input type="file" class="form-control-file mx-3" id="exampleFormControlFile1" name="bone">
     </div>
     <center><button type="submit" class="btn btn-outline-dark" name="submit">Predict</button></center>
-  
-</form>
 
-<br><hr>
-  <label class="input-group-text bg-dark text-white"for="exampleForm2">  Prediction Ans :  </label>
+  </form>
+
+  <br>
+  <hr>
+  <label class="input-group-text bg-dark text-white" for="exampleForm2"> Prediction Ans : </label>
   <span class="custom-select">{{ res }}</span>
 </center>
 {%endblock%}

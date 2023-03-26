@@ -1,0 +1,20 @@
+{%extends "index.html" %}
+{%block content%}
+
+<h1 class="display-3 mx-3">Diabets Detection <h2>(Accuracy : 94%)</h1>
+<div class="container my-3">
+    <legend>Predict Your Diabetes Condition</legend>
+    <form style="border:2px solid rgb(177, 194, 186);padding:22px;border-radius:25px" method="post"
+        action="{{url_for('getValue')}}">
+        <div class="form">
+            <!-- Form Here -->
+        </div>
+        <center><button type="submit" class="btn btn-outline-dark" name="submit">Predict</button></center>
+    </form>
+    <br>
+    <hr>
+    <label class="input-group-text bg-dark text-white" for="exampleForm2"> Prediction Ans : </label>
+    <span class="custom-select">{{ ans }}</span>
+</div>
+
+{%endblock%}
