@@ -56,6 +56,7 @@ Keras
 # License
 This project is licensed under the [insert license here] license - see the LICENSE.md file for details.
 
-
+* Link to access all pre-trained models:
+https://drive.google.com/drive/folders/1AsomE9SA11_ekpMQh7Gi39wf7t69TZjO?usp=sharing
 
 ~made with ❤️ by Team Hacking Paradox
