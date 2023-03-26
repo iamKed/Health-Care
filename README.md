@@ -29,12 +29,16 @@ Enjoy!
 
 # Covid-19 Prediction
 To make a prediction for Covid-19, you will need to just enter your Chest X-Ray on the Covid-19 prediction page. The algorithm or Pretrained Model will then provide you with a prediction for whether you are likely to have Covid-19.
+![covid1](https://user-images.githubusercontent.com/98695336/227757068-30a4d035-7ab8-4988-b8ab-5b96abfda999.jpg)
+
 
 # Brain Tumor Prediction
 To make a prediction for brain tumor, you will need to upload an MRI scan of your brain to the Brain Tumor Prediction page. The algorithm will then provide you with a prediction for whether you have a brain tumor or not.
+![MRI](https://user-images.githubusercontent.com/98695336/227757092-65080a5b-1de8-4f91-ba7e-9d3573ec5bf8.jpg)
 
 # Bone Fracture Prediction
 To make a prediction for bone fracture, you will need to upload an X-ray of the affected area to the Bone Fracture Prediction page. The algorithm will then provide you with a prediction for whether you have a bone fracture or not.
+![bone1](https://user-images.githubusercontent.com/98695336/227757099-6d4017b8-30ed-423e-b65a-69068b0c0e44.jpg)
 
 # Built With:
 Python
