@@ -28,26 +28,24 @@
 
         <p class="mb-0">
       <li><a href="https://www.mygov.in/covid-19/" style="display: flex;"> Countries with the most deaths:</a></li>
-      United States, Brazil, India, Mexico, Peru, Russia, the United Kingdom, Italy, Colombia, and Argentina
-
-
+      United States, Brazil, India, Mexico, Peru, Russia, the United Kingdom, Italy, Colombia, and Argentina.
       </p>
       <footer class="blockquote-footer">Team Hacking Paradox </footer>
   </blockquote>
   </ul>
-
 </div>
 <hr>
-<legend class="mx-3 display-4">Predict</legend>
+<center><legend class="mx-3 display-1">Predict</legend></center>
 <center>
   <form action="{{url_for('getcovidresult')}}" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label for="exampleFormControlFile1">Upload Chest X-Ray </label>
-      <input type="file" class="form-control-file mx-3" id="exampleFormControlFile1" name="covid">
+      <input type="file" class="form-control-file mx-3" id="covid_image" name="covid" onchange="previewImage(event);">
+      <img id="#preview-selected-image" src="#" alt="img_preview" />
     </div>
     <center><button type="submit" class="btn btn-dark" data-toggle="modal" data-target="#covid_modal">Predict</button>
     </center>
-    <div class="modal fade" id="covid_modal" tabindex="-1" role="dialog" aria-labelledby="covid_modal"
+    <!-- <div class="modal fade" id="covid_modal" tabindex="-1" role="dialog" aria-labelledby="covid_modal"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -58,7 +56,7 @@
             </button>
           </div>
           <div class="modal-body">
-          
+            {{res}}
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -66,12 +64,11 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
   </form>
   <br>
   <hr>
-  <!-- Modal -->
 
 </center>
 {%endblock%}

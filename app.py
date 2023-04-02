@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, session
 from flask_sqlalchemy import SQLAlchemy
 import numpy as np
 import pickle
@@ -8,24 +8,22 @@ from keras.utils import load_img,img_to_array
 from keras.models import load_model
 from keras.preprocessing import image
 import warnings
+from sklearn.preprocessing import StandardScaler as std_scaler
 warnings.filterwarnings('ignore')
-
-# with open(r"Python\Health-Care\Trained_Models\model_HD.h5",'rb') as fe_data_file:
-#     model = pickle.load(fe_data_file)
-#Trained_Models\modelHD.h5
 model= load_model(r"Trained_Models\modelHD.h5")
-#C:\Users\asus\OneDrive\Ked data\VS Code\Python\Health-Care\Trained_Models\modelHD.h5
 model_diabetes=load_model(r'Trained_Models\modelDibt.h5')
 from gevent.pywsgi import WSGIServer 
 from werkzeug.utils import secure_filename
 mri_model=load_model(r'Trained_Models\BrainTumor.h5')
 app=Flask(__name__)
+app.secret_key = b'82736781_@*@&(796*5&^5)'
 covid_19_model=load_model(r"Trained_Models\covid_model.h5")
 # bone_model=load_model(r"Trained_Models\bone_fracture.h5")
 skin_model=load_model(r"Trained_Models\skin_d.h5")
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///heart.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///database.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+LOGIN_STATUS=False
 answer=''
 app.config['UPLOAD_FOLDER']=r'static/files'
 class Mainn(db.Model):
@@ -39,7 +37,16 @@ class Mainn(db.Model):
     sc=db.Column(db.Integer, nullable=False)
     enduced=db.Column(db.String, nullable=False)
 
+class Old_Authentication(db.Model):
+    email=db.Column(db.String, primary_key=True )
+    password=db.Column(db.String, nullable=False)
 
+class New_Authentication(db.Model):
+    name=db.Column(db.String, nullable=False)
+    email=db.Column(db.String, primary_key=True)
+    password=db.Column(db.String,nullable=False)
+    gender=db.Column(db.String, nullable=False)
+    age=db.Column(db.Integer, nullable=False)
 #preprocessing codes
 
 
@@ -69,7 +76,7 @@ class Mainn(db.Model):
 #     if Prediction==[0]:
 #         return "Don't Worry You Don't Have a serious Heart Condition"
 #     else:
-#         return "Sorry to say that you might have a serious heart Condition. Please refer to a Doctor and Get treated!"
+#         return ""
 
 
 
@@ -82,11 +89,21 @@ def preprocess_img_mri(img_path):
     return predictions
     
 
+@app.route('/login')
+def login():
+    email=request.form['email']
+    password=request.form['password']
+    # if condition check:
+    return render_template('homepage.html',access=True)
 
 @app.route('/')
 def refresh():
     print(app.root_path)
     return render_template("homepage.html")
+
+@app.route('/registration')
+def registration():
+    return render_template('registration.html')
 
 @app.route('/Covid_19')
 def Covid_19():
@@ -137,7 +154,9 @@ def getcovidresult():
             predictions="Covid 19 Negative"
         elif predictions==1:
             predictions="Covid 19 Positive"
-        return render_template('Covid_19/html',res=predictions)
+        session['predictions'] = predictions
+        # return render_template('Covid_19/html',res=predictions)
+        return render_template('answer.html',res=predictions)
 
 
 
@@ -145,27 +164,32 @@ def getcovidresult():
 def getskin():
     if request.method=='POST':
         img=request.files['skin']
-        print(str(img))
-        test_image = load_img(os.path.join(app.config['UPLOAD_FOLDER'],img),target_size=(224, 224))
+        # print(str(img))
+        # test_image = load_img(os.path.join(app.config['UPLOAD_FOLDER'],img),target_size=(224, 224))
+        
         file_path=(os.path.join(os.path.abspath(os.path.dirname(__file__)),app.config['UPLOAD_FOLDER'],secure_filename(img.filename)))
         img.save(file_path)
+        # test_image=cv2.imread(file_path)
+        # test_image.resize((224,224))
         # print(str(file_path))
-        # test_image = np.asarray(file_path)
+        # test_image = np.asarray(test_image)
+        # test_image=img_to_array(test_image)
         # print(type(img))
         # cv2.imshow(img)
-
         # model = load_model("skin_d.h5")
-        # img = load_img(img,target_size=(224, 224))
+        img = load_img(file_path,target_size=(224, 224))
+        img=img_to_array(img)
         
-        test_image=test_image.resize((224,224))
-        test_image = np.expand_dims(test_image, axis=0)
-        a = np.argmax(model.predict(test_image), axis=1)
-        print(a)
-
-        
+        # test_image=test_image.resize((224,224))
+        test_image = np.expand_dims(img, axis=0)
+        a = np.argmax(skin_model.predict(test_image), axis=1)
+        print(a[0])
+        disease_list = ["Eczema 1677","Melanoma","Atopic Dermantitis","Basal Cell Carcinoma (BCC)","Mealanocytic Nevi (NV)","Benign Keratosis-like Lessions (BKL)", "Psoriasis pictures lichen Planus and related diseases","Seaborrheic Keratoses and other Benign Tumors","Tinea Ringworm Candidiasis and other fungal infections","Warts Molluscum and other Viral Infections"]
+        disease=disease_list[int(a[0]+1)]
+        print(disease)
         # preprocessed_img=preprocess_img_skin(img)
         # result=skin_model.predict(preprocessed_img)
-    # return render_template('Skin _Cancer.html',res=result)
+    return render_template('Skin_Cancer.html',res=disease)
 
 @app.route('/getbone',methods=['POST'])
 def getbone():
@@ -192,35 +216,33 @@ def getbone():
 @app.route('/getValue',methods=['POST'])
 def getValue():
     if request.method=='POST':
-        pass
-        oldpeak=1.055555556
-        slope=0.602693603
-        ca=0.676767677
-        thal=0.835016835
-        sex=0
-        age=request.form['age']
-        cp=request.form['chaistpain']
-        restecg=request.form['wave']
-        thalach=request.form['hrate']
-        fbs=request.form['bloodsugar']
-        trestbps=request.form['bloodpressure']
-        chol=request.form['serum']
-        exang=request.form['anigna']
-        # print(age)
-        # print(restecg)
-        # print(fbs)
-        # print(chol)
-        # print(trestbps)
-        # print(exang)
-        # print(thalach)
+        oldpeak=float(request.form['oldpeak'])
+        slope=float(request.form['slope'])
+        ca=float(request.form['ca'])
+        thal=float(request.form['thal'])
+        sex=float(request.form['sex'])
+        age=float(request.form['age'])
+        cp=float(request.form['chaistpain'])
+        restecg=float(request.form['wave'])
+        thalach=float(request.form['hrate'])
+        fbs=float(request.form['bloodsugar'])
+        trestbps=float(request.form['bloodpressure'])
+        chol=float(request.form['serum'])
+        exang=float(request.form['anigna'])
         input_data=[age,sex,cp,trestbps,chol,fbs,restecg,thalach,exang,oldpeak,slope,ca,thal]
-        input_data=tuple(input_data)
-        input_data=np.asarray(input_data)
-        input_data=input_data.reshape(1,-1)
-        pred=model.predict(input_data)
-        print(pred)
-        # answer=predict_heart_condition(age,sex,cp,trestbps,chol,fbs,restecg,thalach,exang,oldpeak,slope,ca,thal)
-        # print(answer)
+        print(input_data)
+        # input_data=tuple(input_data)
+        # input_data=np.asarray(input_data[:])
+        # input_data=input_data.reshape(1,-1)
+        # input_data=std_scaler.transform(input_data)
+        # pred=model.predict(input_data)
+        # print(pred)
+        # answer=pred[0][0]>0.75
+        # # print(answer)
+        # if answer:
+        #     print("Don't Worry You Don't Have a serious Heart Condition")
+        # else:
+        #     print("Sorry to say that you might have a serious heart Condition. Please refer to a Doctor and Get treated!")
         # return render_template ('Heart_Disease.html',ans=answer)
 
 if __name__=="__main__":

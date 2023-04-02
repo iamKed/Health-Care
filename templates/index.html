@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" style="scroll-behavior: smooth; padding:7px;margin:2px">
+<html lang="en" style="scroll-behavior: smooth; overflow-x:hidden">
 
 <head>
   <meta charset="utf-8">
@@ -18,11 +18,10 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
     <script src="main.js" type="text/javascript"></script>
-
 </head>
 
-<body style="background-color: #e8edec; overflow-x: hidden;">
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+<body >
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" style="color:#6eff54">
     <div class="container-fluid">
       <a class="navbar-brand" href="/"><span style="color: #2b7e33;">Hacking</span><span style="color: #000000;">Paradox</span></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -35,10 +34,24 @@
           <li class="nav-item">
             <a class="nav-link text-muted mx-3" href="/#modules">Modules</a>
           </li>
+    
           {%block content1%}
           {%endblock%}
         </ul>
+        <div class="dropdown pmd-dropdown pmd-user-info ml-auto">
+          <a href="javascript:void(0);" class="btn-user dropdown-toggle media align-items-center" data-toggle="dropdown" data-sidebar="true" aria-expanded="false">
+              <img class="mr-2" src="https://pro.propeller.in/assets/images/avatar-icon-40x40.png" width="40" height="40" alt="avatar">
 
+              <div class="media-body">
+                  User
+              </div>
+              <i class="material-icons md-light ml-2 pmd-sm"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-right" role="menu">
+              <!-- <a class="dropdown-item" href="javascript:void(0);">Edit Profile</a> -->
+              <a class="dropdown-item" href="/">Logout</a>
+          </ul>
+      </div>
       </div>
     </div>
   </nav>

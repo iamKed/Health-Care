@@ -1,49 +1,11 @@
-
 {%extends "index.html"%}
 {%block content%}
-<h1 class="display-4 mx-3">Team Hacking Paradox</h1>
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
-  <div class="carousel-inner" >
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <center><div class="carousel-item active">
-      <img class="d-block w-75"  style="border-radius: 30px;" src="static/m1.jpg" alt="First slide">
-      <div class="carousel-caption d-none d-md-block">
-        <h5 style="color: black;">Let's make the Future Better</h5>
-        <p></p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-75" src="static\m2.jpg" style="border-radius: 30px;" alt="Second slide">
-      <div class="carousel-caption d-none d-md-block">
-        <h5 style="color: rgb(255, 255, 255);">Let ML take care of our heart and health</h5>
-        <p></p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-75" src="static\m3.jpg" style="border-radius: 30px;" alt="Third slide">
-      <div class="carousel-caption d-none d-md-block">
-        <h5 style="color: rgb(255, 255, 255);">Take Care of Yourself Anywhere, Anytime!</h5>
-        <p></p>
-      </div>
-    </div> 
-  </center>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+<div class="view opacity-50"
+  style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.webp'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
 </div>
+<h1 class="display-4 mx-3" style="padding: 10px;"> Hacking Paradox</h1>
 <div class="bg-image hover-overlay ripple my-3" style="display:flex;align-items:center;justify-content:center;">
-  <img src="static\new1 (2).jpg" class="img w-50" style="border-radius:50px;" />
+  <!-- <img src="static\new1 (2).jpg" class="img w-50" style="border-radius:50px;" /> -->
   <blockquote class="blockquote text-center my-3 mx-3">
     <p class="mb-0">Heart disease let’s defeat, Keep a healthy Heart Beat
     </p>
@@ -56,23 +18,24 @@
     <footer class="blockquote-footer">Team Hacking Paradox </footer>
   </blockquote>
 </div>
-
-<legend id="modules" class="my-3 mx-3">Modules</legend>
-<div class="card mx-3 my-3">
+<legend id="modules" class="my-3 mx-3" style="padding: 10px;">Modules</legend>
+<div class="card mx-3 my-3" style="padding: 10px;">
   <h5 class="card-header">Covid-19 😷</h5>
-  <div class="card-body">
+  <div class="card-body" style="padding: 10px;">
     <h5 class="card-title">Covid-19 Detection using Chest X-Ray</h5>
-    <p class="card-text">This is the Section that helps you to predict possibility of having Covid-19 Virus with the help of pretrained Model</p>
+    <p class="card-text">This is the Section that helps you to predict possibility of having Covid-19 Virus with the
+      help of pretrained Model</p>
     <a href="/Covid_19" class="btn btn-dark ">Check out</a>
   </div>
 </div>
 
-<div class="card mx-3 my-3">
+<div class="card mx-3 my-3" style="padding: 10px;">
   <h5 class="card-header">Diabetes</h5>
   <div class="card-body">
     <h5 class="card-title">Diabetes detection using Machine Learning</h5>
-    <p class="card-text">This is the Section that helps you to predict possibility of having Diabetes using Pretrained models using Machine Learning</p>
-    <a href="/Covid_19" class="btn btn-dark ">Check out</a>
+    <p class="card-text">This is the Section that helps you to predict possibility of having Diabetes using Pretrained
+      models using Machine Learning</p>
+    <a href="/Diabetes" class="btn btn-dark ">Check out</a>
   </div>
 </div>
 
@@ -80,7 +43,8 @@
   <h5 class="card-header">Heart 🫀</h5>
   <div class="card-body">
     <h5 class="card-title">Heart Disease Prediction using Machine Learning </h5>
-    <p class="card-text">This is the section Whereyou can predict your condition of heart, whether it's serious or you don't have to worry about it.</p>
+    <p class="card-text">This is the section Whereyou can predict your condition of heart, whether it's serious or you
+      don't have to worry about it.</p>
     <a href="/Heart_Disease_Prediction" class="btn btn-dark">Check out</a>
   </div>
 </div>
@@ -89,7 +53,8 @@
   <h5 class="card-header">Brain Tumor 🧠</h5>
   <div class="card-body">
     <h5 class="card-title">Brain Tumor Detection using Brain MRI</h5>
-    <p class="card-text"> Sometimes it's hard for even Doctors also to Spot a Brain Tumor using just MRI of your Brain. So this section will help them to have more precise decision. </p>
+    <p class="card-text"> Sometimes it's hard for even Doctors also to Spot a Brain Tumor using just MRI of your
+      Brain. So this section will help them to have more precise decision. </p>
     <a href="/Brain_Tumor_Detection" class="btn btn-dark">Check out</a>
   </div>
 </div>
@@ -107,7 +72,8 @@
   <h5 class="card-header">Bone Fracture 🦴🩻</h5>
   <div class="card-body">
     <h5 class="card-title">Bone Fracture Detection using Bone X-Ray</h5>
-    <p class="card-text">Sometimes Doctors fail to spot a minute Fracture whereas this model will help to detect any fractures in the Patient's X-Ray. </p>
+    <p class="card-text">Sometimes Doctors fail to spot a minute Fracture whereas this model will help to detect any
+      fractures in the Patient's X-Ray. </p>
     <a href="/Bone_Fracture_Detection" class="btn btn-dark">Check out</a>
   </div>
 </div>
