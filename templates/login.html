@@ -1,90 +1,56 @@
-<!-- Section: Design Block -->
-<section class="">
-    <!-- Jumbotron -->
-    <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
-      <div class="container">
-        <div class="row gx-lg-5 align-items-center">
-          <div class="col-lg-6 mb-5 mb-lg-0">
-            <h1 class="my-5 display-3 fw-bold ls-tight">
-              The Best Care <br />
-              <span class="text-primary">for your Health</span>
-            </h1>
-            <p style="color: hsl(217, 10%, 50.8%)">
-             Let AI take care for you! Use the technology for our better future. Use of Machine Learning and Arifical Intelligence for Better Human Mankind.
-            </p>
-          </div>
-  
-          <div class="col-lg-6 mb-5 mb-lg-0">
-            <div class="card">
-              <div class="card-body py-5 px-md-5">
-                <form>
-                  <!-- 2 column grid layout with text inputs for the first and last names -->
-                  <div class="row">
-                    <div class="col-md-6 mb-4">
-                      <div class="form-outline">
-                        <input type="text" id="form3Example1" class="form-control" />
-                        <label class="form-label" for="form3Example1">First name</label>
-                      </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                      <div class="form-outline">
-                        <input type="text" id="form3Example2" class="form-control" />
-                        <label class="form-label" for="form3Example2">Last name</label>
-                      </div>
-                    </div>
+{%extends 'index.html'%}
+
+{%block content%}
+<section class="vh-100" style="background: linear-gradient(0.95turn, #9A616D, #ad727f, #ccffcc)">
+  <div class="container py- h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img src="/static/new1 (2).jpg" alt="login form" class="img-fluid"
+                style="border-radius: 1rem 0 0 1rem;  height:700px;" />
+            </div>
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+
+                <form method="post">
+
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <img src="/static/Logo.png" class="login_logo" alt="Logo" style="margin-right:10px  ;width: 70px;height:70px">
+                    <!-- <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i> -->
+                    <span class="h1 fw-bold mb-0">Hacking Paradox</span>
                   </div>
-  
-                  <!-- Email input -->
+
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+
                   <div class="form-outline mb-4">
-                    <input type="email" id="form3Example3" class="form-control" />
-                    <label class="form-label" for="form3Example3">Email address</label>
+                    <input type="email" id="email" class="form-control form-control-lg" />
+                    <label class="form-label" for="email" name="mail">Email address</label>
                   </div>
-  
-                  <!-- Password input -->
+
                   <div class="form-outline mb-4">
-                    <input type="password" id="form3Example4" class="form-control" />
-                    <label class="form-label" for="form3Example4">Password</label>
+                    <input type="password" id="pass" class="form-control form-control-lg" />
+                    <label class="form-label" for="pass" name="password">Password</label>
                   </div>
-  
-                  <!-- Checkbox -->
-                  <div class="form-check d-flex justify-content-center mb-4">
-                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
-                    <label class="form-check-label" for="form2Example33">
-                      Subscribe to our newsletter
-                    </label>
+
+                  <div class="pt-1 mb-4">
+                    <button class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
                   </div>
-  
-                  <!-- Submit button -->
-                  <button type="submit" class="btn btn-primary btn-block mb-4">
-                    Sign up
-                  </button>
-  
-                  <!-- Register buttons -->
-                  <div class="text-center">
-                    <p>or sign up with:</p>
-                    <button type="button" class="btn btn-link btn-floating mx-1">
-                      <i class="fab fa-facebook-f"></i>
-                    </button>
-  
-                    <button type="button" class="btn btn-link btn-floating mx-1">
-                      <i class="fab fa-google"></i>
-                    </button>
-  
-                    <button type="button" class="btn btn-link btn-floating mx-1">
-                      <i class="fab fa-twitter"></i>
-                    </button>
-  
-                    <button type="button" class="btn btn-link btn-floating mx-1">
-                      <i class="fab fa-github"></i>
-                    </button>
-                  </div>
+
+                  <a class="small text-muted" href="#!">Forgot password?</a>
+                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="/registration"
+                      style="color: #393f81;">Register here</a></p>
+                  <a href="#!" class="small text-muted">Terms of use.</a>
+                  <a href="#!" class="small text-muted">Privacy policy</a>
                 </form>
+
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Jumbotron -->
-  </section>
-  <!-- Section: Design Block -->
+  </div>
+</section>
+{%endblock%}

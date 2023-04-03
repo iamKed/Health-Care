@@ -35,7 +35,9 @@
   </ul>
 </div>
 <hr>
-<center><legend class="mx-3 display-1">Predict</legend></center>
+<center>
+  <legend class="mx-3 display-1">Predict</legend>
+</center>
 <center>
   <form action="{{url_for('getcovidresult')}}" method="post" enctype="multipart/form-data">
     <div class="form-group">
@@ -45,30 +47,25 @@
     </div>
     <center><button type="submit" class="btn btn-dark" data-toggle="modal" data-target="#covid_modal">Predict</button>
     </center>
-    <!-- <div class="modal fade" id="covid_modal" tabindex="-1" role="dialog" aria-labelledby="covid_modal"
-      aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="covid_modal">Covid Prediction Result</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            {{res}}
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Know More...</button>
-          </div>
-        </div>
-      </div>
-    </div> -->
 
   </form>
   <br>
   <hr>
 
 </center>
+{%endblock%}
+
+{%block content2%}
+{% if status == true %}
+<a href="javascript:void(0);" class="btn-user dropdown-toggle media align-items-center" data-toggle="dropdown"
+  data-sidebar="true" aria-expanded="false">
+  <img class="mr-2" src="/static/profile.png" style="width:40px; height:40px;"
+    alt="avatar">
+  {{ username }}
+{% else %}
+<a class="nav-link text-muted mx-3" href="/login">
+  Login
+  {% endif %}</a>
+</li>
+
 {%endblock%}

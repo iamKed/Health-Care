@@ -1,10 +1,10 @@
 {%extends "index.html" %}
 {%block content%}
-<!-- [age,sex,cp,trestbps,chol,fbs,restecg,thalach,exang,oldpeak,slope,ca,thal] -->
-<h1 class="display-3 mx-3">Heart Disease Detection  <h2>(Accuracy : 94%)</h1>
-<div class="container my-3">
+<h1 class="display-3 mx-3">Heart Disease Detection <h2 class="mx-3">(Accuracy : 94%)</h1>
+<div class="container my-3 ">
   <legend>Predict Your Heart Condition Right Now</legend>
-  <form style="border:2px solid rgb(177, 194, 186);padding:22px;border-radius:25px" method="post" action="{{url_for('getValue')}}">
+  <form style="border:2px solid rgb(177, 194, 186);padding:22px;border-radius:25px" method="post"
+    action="{{url_for('getValue')}}">
     <div class="form">
       <p>Please Enter the Following Details</p>
       <hr>
@@ -49,8 +49,8 @@
           <label class="input-group-text" for="inputGroupSelect02">Fasting Blood Sugar : </label>
         </div>
         <select class="custom-select" id="inputGroupSelect02" placeholder="Chest-Pain Type" name="bloodsugar">
-          <option selected value="0" >Fasting blood sugar < 120</option>
-          <option value="1" >Fasting blood sugar > 120</option>
+          <option selected value="0">Fasting blood sugar < 120</option>
+          <option value="1">Fasting blood sugar > 120</option>
 
         </select>
       </div>
@@ -61,16 +61,16 @@
         </div>
 
 
-        <select class="custom-select" id="inputGroupSelect02"  name="wave">
+        <select class="custom-select" id="inputGroupSelect02" name="wave">
           <option selected value="0">Normal</option>
           <option value="1">Having ST-T wave abnormality</option>
           <option value="2">Showing probable or definite left
             ventricular hypertrophy</option>
 
-          </select>
-        </div>
-            <label for="hrate">Maximum Heart Rate Achieved</label>
-          <input type="number" id="hrate" class="form-control" name="hrate" itemid="hrate">
+        </select>
+      </div>
+      <label for="hrate">Maximum Heart Rate Achieved</label>
+      <input type="number" id="hrate" class="form-control" name="hrate" itemid="hrate">
 
 
 
@@ -102,7 +102,8 @@
 
       <div class="input-group mb-3 my-3">
         <div class="input-group-append">
-          <label class="input-group-text" for="inputGroupSelect02"> CA (Number of major vessels (0-3) colored by flourosopy): </label>
+          <label class="input-group-text" for="inputGroupSelect02"> CA (Number of major vessels (0-3) colored by
+            flourosopy): </label>
         </div>
 
         <select class="custom-select" id="inputGroupSelect01" name="ca">
@@ -127,8 +128,9 @@
     </div>
     <center> <button type="submit" class="btn btn-outline-dark" name="submit">Predict</button> </center>
   </form>
-  <br><hr>
-  <label class="input-group-text bg-dark text-white"for="answer">  Prediction Ans :  </label>
+  <br>
+  <hr>
+  <label class="input-group-text bg-dark text-white" for="answer"> Prediction Ans : </label>
   <span class="custom-select">{{ ans }}</span>
 </div>
 
@@ -136,21 +138,17 @@
 
 
 
-<!--
-oldpeak
-slope
-ca
-thal
-condition
+{%block content2%}
+{% if status == true %}
+<a href="javascript:void(0);" class="btn-user dropdown-toggle media align-items-center" data-toggle="dropdown"
+  data-sidebar="true" aria-expanded="false">
+  <img class="mr-2" src="/static/profile.png" style="width:40px; height:40px;"
+    alt="avatar">
+  {{ username }}
+{% else %}
+<a class="nav-link text-muted mx-3" href="/login">
+  Login
+  {% endif %}</a>
+</li>
 
-
--->
-
-<!--
-
-oldpeak = ST depression induced by exercise relative to rest
-the slope of the peak exercise ST segment
-number of major vessels (0-3) colored by flourosopy
-thal: 0 = normal; 1 = fixed defect; 2 = reversable defect
-
--->
+{%endblock%}

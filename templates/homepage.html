@@ -4,9 +4,8 @@
   style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.webp'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
 </div>
 <h1 class="display-4 mx-3" style="padding: 10px;"> Hacking Paradox</h1>
-<div class="bg-image hover-overlay ripple my-3" style="display:flex;align-items:center;justify-content:center;">
-  <!-- <img src="static\new1 (2).jpg" class="img w-50" style="border-radius:50px;" /> -->
-  <blockquote class="blockquote text-center my-3 mx-3">
+<div style="height: 600px;background-image: url('/static/homepage.jpg');">
+  <blockquote class="blockquote text-left my-3 mx-3">
     <p class="mb-0">Heart disease let’s defeat, Keep a healthy Heart Beat
     </p>
     <p class="mb-0">
@@ -17,6 +16,7 @@
       Diet cures more than doctors</p>
     <footer class="blockquote-footer">Team Hacking Paradox </footer>
   </blockquote>
+  
 </div>
 <legend id="modules" class="my-3 mx-3" style="padding: 10px;">Modules</legend>
 <div class="card mx-3 my-3" style="padding: 10px;">
@@ -86,4 +86,19 @@
 <li class="nav-item">
   <a class="nav-link text-muted" href="#footer">About</a>
 </li>
+{%endblock%}
+
+{%block content2%}
+{% if status == true %}
+<a href="javascript:void(0);" class="btn-user dropdown-toggle media align-items-center" data-toggle="dropdown"
+  data-sidebar="true" aria-expanded="false">
+  <img class="mr-2" src="/static/profile.png" style="width:40px; height:40px;"
+    alt="avatar">
+  {{ username }}
+{% else %}
+<a class="nav-link text-muted mx-3" href="/login">
+  Login
+  {% endif %}</a>
+</li>
+
 {%endblock%}
