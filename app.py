@@ -23,8 +23,8 @@ skin_model=load_model(r"Trained_Models\skin_d.h5")
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///database.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
-LOGIN_STATUS=True
-USERNAME=str('Ked')
+LOGIN_STATUS=False
+USERNAME=str('')
 answer=''
 app.config['UPLOAD_FOLDER']=r'static/files'
 class Mainn(db.Model):

@@ -56,14 +56,161 @@
   </nav>
   {%block content%}
   {%endblock%}
-  <div id="footer">
-    <footer class="text-center text-white" style="background-color: #ffffff;">
-      <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2023 Copyright:
-        <a class="text-dark" href="/"> Team Hacking Paradox</a>
-      </div>
+  <div class="container-fluid">
+    <!-- Footer -->
+    <footer
+            class="text-center text-lg-start text-dark"
+            style="background-color: #8d8991;color:#fff;"
+            >
+      <!-- Section: Social media -->
+      <section
+               class="d-flex justify-content-between p-4 text-white"
+               style="background-color: #161516 ;color:#fff;"
+               >
+        <!-- Left -->
+        <div class="me-5" >
+          <span class="h5">Get connected with us on social networks:</span>
+        </div>
+        <!-- Left -->
 
+        <!-- Right -->
+        <div>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-github"></i>
+          </a>
+          &emsp;
+          <a href="" class="text-white me-4">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          &emsp;
+          <a href="" class="text-white me-4">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          &emsp;
+          <a href="" class="text-white me-4">
+            <i class="fab fa-twitter"></i>
+          </a>
+          &emsp;
+          <a href="" class="text-white me-4">
+            <i class="fab fa-google"></i>
+          </a>
+          &emsp;
+          <a href="" class="text-white me-4">
+            <i class="fab fa-instagram"></i>
+          </a>
+
+        </div>
+        <!-- Right -->
+      </section>
+      <!-- Section: Social media -->
+
+      <!-- Section: Links  -->
+      <section class="" style="color:#fff;">
+        <div class="container-fluid text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Content -->
+              <h6 class="text-uppercase fw-bold">About Us</h6>
+              <hr
+                  class="mb-4 mt-0 d-inline-block mx-auto"
+                  style="width: 60px; background-color: #34863a; height: 2px"/>
+                  <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 150px; height: 150px;overflow:hidden">
+                    <img src="{{url_for('static', filename='Logo.png')}}" style="height: 120px;width:120px;"   alt=""
+                         loading="lazy" />
+                  </div>
+                  <!-- <img src="D:\Data\Downloads\Health-Care\static\Logo.png" alt="" style="width: 40px;" height="40px;"> -->
+              <p>
+                You can get Health Care for yourself and your Loved Ones.
+                We have used Machine Learning (ML) for building an efficient and effective models to help predict about your Health!
+                <br><p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                ~Team HackingParadox</p>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+
+<!--
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              Links -->
+              <!--
+              <h6 class="text-uppercase fw-bold">Products</h6>
+              <hr
+                  class="mb-4 mt-0 d-inline-block mx-auto"
+                  style="width: 60px; background-color: #34863a; height: 2px"
+                  />
+              <p>
+                <a href="#!" class="text-dark">MDBootstrap</a>
+              </p>
+              <p>
+                <a href="#!" class="text-dark">MDWordPress</a>
+              </p>
+              <p>
+                <a href="#!" class="text-dark">BrandFlow</a>
+              </p>
+              <p>
+                <a href="#!" class="text-dark">Bootstrap Angular</a>
+              </p>
+            </div>
+           -->
+
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold" style="color:#fff;">Useful links</h6>
+              <hr
+                  class="mb-4 mt-0 d-inline-block mx-auto"
+                  style="width: 60px; background-color: #34863a; height: 2px"
+                  />
+              <p>
+                <a href="#!" class="text-dark">Your Account</a>
+              </p>
+              <p>
+                <a href="#!" class="text-dark">Become an Affiliate</a>
+              </p>
+              <p>
+                <a href="#!" class="text-dark">Shipping Rates</a>
+              </p>
+              <p>
+                <a href="#!" class="text-dark">Help</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold">Contact us</h6>
+              <hr
+                  class="mb-4 mt-0 d-inline-block mx-auto"
+                  style="width: 60px; background-color: #34863a; height: 2px"
+                  />
+              <p><i class="fa-sharp fa-solid fa-location-dot mr-3" style="color: #000;"></i> India, Mahrashtra-Solapur</p>
+              <p><i class="fas fa-envelope mr-3" style="display:inline-flex;"></i> kedarswami9900@gmail.com</p>
+              <p><i class="fas fa-phone mr-3" style="display: inline-flex;"></i> +919284289418 | +917387610590</p>
+              <p><i class="fas fa-phone mr-3"></i> +919370091886 | +919975443736</p>
+              <!-- <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p> -->
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <!-- Section: Links  -->
+
+      <!-- Copyright -->
+      <div
+           class="text-center p-3"
+           style="background-color: rgba(0, 0, 0, 0.2)"
+           >
+        © 2023 Copyright:
+        <a class="text-dark" href="/"
+           > Team HackingParadox</a
+          >
+      </div>
+      <!-- Copyright -->
     </footer>
+    <!-- Footer -->
   </div>
 </body>
 
