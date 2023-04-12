@@ -1,104 +1,302 @@
-{%extends "index.html"%}
+{%extends "index.html"%} 
 {%block content%}
-<div class="view opacity-50"
-  style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.webp'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-</div>
-<h1 class="display-4 mx-3" style="padding: 10px;"> Hacking Paradox</h1>
-<div class="" style="display: flex;">
-  <blockquote class="blockquote text-left my-3 mx-3">
-    <p class="mb-0">Heart disease let’s defeat, Keep a healthy Heart Beat
-    </p>
-    <p class="mb-0">
-      Commit to be fit</p>
-    <p class="mb-0">
-      Fight the fight, find the Cure</p>
-    <p class="mb-0">
-      Diet cures more than doctors</p>
-    <footer class="blockquote-footer">Team Hacking Paradox </footer>
-
+<div class="view opacity-50" style="
+    background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  "></div>
+<h1 class="display-4 mx-3" style="padding: 10px">Hacking Paradox</h1>
+<div class="bg-image hover-overlay ripple my-3" style="display: flex; align-items: center; justify-content: center">
+  <!-- <img src="static\new1 (2).jpg" class="img w-50" style="border-radius:50px;" /> -->
+  <blockquote class="blockquote text-center my-3 mx-3">
+    <p class="mb-0">Heart disease let’s defeat, Keep a healthy Heart Beat</p>
+    <p class="mb-0">Commit to be fit</p>
+    <p class="mb-0">Fight the fight, find the Cure</p>
+    <p class="mb-0">Diet cures more than doctors</p>
+    <footer class="blockquote-footer">Team Hacking Paradox</footer>
   </blockquote>
-  <img src="/static/homepage2.jpg" alt="" style="height: 600px;float:right">
 </div>
-<legend id="modules" class="my-3 mx-3" style="padding: 10px;">Modules</legend>
-<div class="card mx-3 my-3" style="padding: 10px;">
-  <h5 class="card-header">Covid-19 😷</h5>
-  <div class="card-body" style="padding: 10px;">
-    <h5 class="card-title">Covid-19 Detection using Chest X-Ray</h5>
-    <p class="card-text">This is the Section that helps you to predict possibility of having Covid-19 Virus with the
-      help of pretrained Model</p>
-    <a href="/Covid_19" class="btn btn-dark ">Check out</a>
+<legend id="modules" class="my-3 mx-3" style="padding: 10px">Modules</legend>
+<!-- <div class="row">
+  <div class="column">
+    <div class="card">
+      <h3>Card 1</h3>
+      <p>Some text</p>
+      <p>Some text</p>
+    </div>
   </div>
-</div>
 
-<div class="card mx-3 my-3" style="padding: 10px;">
-  <h5 class="card-header">Diabetes</h5>
-  <div class="card-body">
-    <h5 class="card-title">Diabetes detection using Machine Learning</h5>
-    <p class="card-text">This is the Section that helps you to predict possibility of having Diabetes using Pretrained
-      models using Machine Learning</p>
-    <a href="/Diabetes" class="btn btn-dark ">Check out</a>
+  <div class="column">
+    <div class="card">
+      <h3>Card 2</h3>
+      <p>Some text</p>
+      <p>Some text</p>
+    </div>
   </div>
-</div>
+</div> -->
 
-<div class="card mx-3 my-3">
-  <h5 class="card-header">Heart 🫀</h5>
-  <div class="card-body">
-    <h5 class="card-title">Heart Disease Prediction using Machine Learning </h5>
-    <p class="card-text">This is the section Whereyou can predict your condition of heart, whether it's serious or you
-      don't have to worry about it.</p>
-    <a href="/Heart_Disease_Prediction" class="btn btn-dark">Check out</a>
-  </div>
-</div>
+<!-- <div class="row row-cols-3 row-cols-md-1 g-4 mx-4"> -->
 
-<div class="card mx-3 my-3">
-  <h5 class="card-header">Brain Tumor 🧠</h5>
-  <div class="card-body">
-    <h5 class="card-title">Brain Tumor Detection using Brain MRI</h5>
-    <p class="card-text"> Sometimes it's hard for even Doctors also to Spot a Brain Tumor using just MRI of your
-      Brain. So this section will help them to have more precise decision. </p>
-    <a href="/Brain_Tumor_Detection" class="btn btn-dark">Check out</a>
-  </div>
-</div>
+<!--
+  <div class="row mx-3">
+  <div class="col">
 
-<div class="card mx-3 my-3">
-  <h5 class="card-header">Skin Cancer or Skin Disease </h5>
-  <div class="card-body">
-    <h5 class="card-title">Skin Disease Prediction using image of Skin</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="/Skin_Cancer" class="btn btn-dark">Check out</a>
-  </div>
-</div>
+    <div class="card">
+      <h2>Module-1 COVID-19</h2>
+      <div class="card-inner">
+        <div class="card-front">
+          <img
+            src="{{ url_for('static', filename='report-icon-isolated-black-background-simple-vector-logo-163705299.jpg')}}"
+            style="width:500px; height: 351px"
+          />
+        </div>
 
-<div class="card mx-3 my-3">
-  <h5 class="card-header">Bone Fracture 🦴🩻</h5>
-  <div class="card-body">
-    <h5 class="card-title">Bone Fracture Detection using Bone X-Ray</h5>
-    <p class="card-text">Sometimes Doctors fail to spot a minute Fracture whereas this model will help to detect any
-      fractures in the Patient's X-Ray. </p>
-    <a href="/Bone_Fracture_Detection" class="btn btn-dark">Check out</a>
+        <div class="card-back">
+          <h1>Module 1 info</h1>
+          <p></p>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card">
+      <h2>Module 2 Heart Diseases</h2>
+      <div class="card-inner">
+        <div class="card-front">
+          <img
+            src="{{ url_for('static', filename='report-icon-isolated-black-background-simple-vector-logo-163705299.jpg')}}"
+            style="width:500px; height: 351px"
+          />
+        </div>
+
+        <div class="card-back">
+          <h1>Module2 info</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, perferendis aperiam! Fuga quia ducimus amet sit unde pariatur ipsam pentore temporibus nisi, sit deserunt quidem doloribus neque.</p>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+      <div class="card">
+            <h2>Module-3 Diabetes Prediction</h2>
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src=
+"{{ url_for('static', filename='report-icon-isolated-black-background-simple-vector-logo-163705299.jpg')}}"
+                            style="width:500px;height:351px;">
+                </div>
+
+                <div class="card-back">
+                    <h1>Module 3 info</h1>
+                    <p></p>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
   </div>
 </div>
+ <div class="col">
+    <div class="card">
+      <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp" class="card-img-top" alt="Palm Springs Road" />
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">
+          This is a longer card with supporting text below as a natural lead-in to
+          additional content. This content is a little bit longer.
+        </p>
+      </div>
+    </div>
+  </div> -->
+
+<!-- <br><br><br><br> -->
+
+<!-- <div class="row mx-3">
+    <div class="col"> -->
+<!-- <div class="card" id="cardl">
+        <div class="cardflip">
+          <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top"
+            alt="Hollywood Sign on The Hill" />
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              This is a longer card with supporting text below as a natural lead-in to
+              additional content. This content is a little bit longer.
+            </p>
+          </div>
+        </div> -->
+
+
+
+
+<!-- ********************************************************** -->
+
+
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-col">
+      <div class="h-1 bg-gray-200 rounded overflow-hidden">
+        <div class="w-100 h-full bg-zinc-900 fluid"></div>
+      </div>
+      <div class="flex flex-wrap sm:flex-row flex-col py-6 mb-12">
+      </div>
+    </div>
+    <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+      <div class="p-4 md:w-1/3 sm:mb-0 mb-6 hover-shadow">
+        <div class="rounded-lg h-64 overflow-hidden">
+          <img alt="content" class="object-cover object-center h-full w-full"
+            src="{{url_for('static', filename='mod1.webp')}}">
+        </div>
+        <h2 class="text-xl font-medium title-font text-slate-950 mt-5">COVID-19 Prediction</h2>
+        <p class="text-base leading-relaxed mt-2 text-slate-950">Covid-19 Detection using Chest X-Ray <br>
+          This is the Section that helps you to predict possibility of having Covid-19 Virus with the help of pretrained
+          Model</p>
+        <a href="/Covid_19" class="text-Slate-50 inline-flex items-center mt-3 btn btn-outline-dark">Check Out
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+      <div class="p-4 md:w-1/3 sm:mb-0 mb-6 hover-shadow">
+        <div class="rounded-lg h-64 overflow-hidden">
+          <img alt="content" class="object-cover object-center h-full w-full"
+            src="{{url_for('static', filename='mod2.webp')}}">
+        </div>
+        <h2 class="text-xl font-medium title-font text-slate-950 mt-5">Diabetes Prediction</h2>
+        <p class="text-base leading-relaxed mt-2 text-slate-950">Diabetes Prediction using Machine Learning <br>
+          This is the section Where you can know are you diabetes patient or not.</p>
+        <a href="/Diabetes_Prediction" class="text-Slate-50 inline-flex items-center mt-3 btn btn-outline-dark">Check
+          Out
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+      <div class="p-4 md:w-1/3 sm:mb-0 mb-6 hover-shadow">
+        <div class="rounded-lg h-64 overflow-hidden">
+          <img alt="content" class="object-cover object-center h-full w-full"
+            src="{{url_for('static', filename='mod3.webp')}}">
+        </div>
+        <h2 class="text-xl font-medium title-font text-slate-950 mt-5">Heart Health Prediction</h2>
+        <p class="text-base leading-relaxed mt-2 text-slate-950">Heart Disease Prediction using Machine Learning <br>
+          This is the section Whereyou can predict your condition of heart, whether it's serious or you don't have to
+          worry about it.</p>
+        <a href="/Heart_Disease_Prediction"
+          class="text-Slate-50 inline-flex items-center mt-3 btn btn-outline-dark">Check Out
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-18 mx-auto">
+    <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+      <div class="p-4 md:w-1/3 sm:mb-0 mb-6 hover-shadow">
+        <div class="rounded-lg h-64 overflow-hidden">
+          <img alt="content" class="object-cover object-center h-full w-full"
+            src="{{url_for('static', filename='mod4.webp')}}">
+        </div>
+        <h2 class="text-xl font-medium title-font text-slate-950 mt-5">Brain Tumor Prediction</h2>
+        <p class="text-base leading-relaxed mt-2 text-slate-950">Brain Tumor Detection using Brain MRI <br>
+          Sometimes it's hard for even Doctors also to Spot a Brain Tumor using just MRI of your Brain. So this section
+          will help them to have more precise decision. </p>
+        <a href="/Brain_Tumor_Detection" class="text-Slate-50 inline-flex items-center mt-3 btn btn-outline-dark">Check
+          Out
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+      <div class="p-4 md:w-1/3 sm:mb-0 mb-6 hover-shadow">
+        <div class="rounded-lg h-64 overflow-hidden">
+          <img alt="content" class="object-cover object-center h-full w-full"
+            src="{{url_for('static', filename='mod5.webp')}}">
+        </div>
+        <h2 class="text-xl font-medium title-font text-slate-950 mt-5">Skin Cancer or Skin Disease Prediction</h2>
+        <p class="text-base leading-relaxed mt-2 text-slate-950">Skin Disease Prediction using image of Skin <br>
+          With supporting text below as a natural lead-in to additional content.</p>
+        {% if status == true %}
+        <a href="/Skin_Cancer" class="text-Slate-50 inline-flex items-center mt-3 btn btn-outline-dark">Check Out
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+            {% else %}
+            <a href="/login" class="text-Slate-50 inline-flex items-center mt-3 btn btn-outline-dark">Check Out
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+                {% endif %}
+        </a>
+      </div>
+      <div class="p-4 md:w-1/3 sm:mb-0 mb-6 hover-shadow">
+        <div class="rounded-lg h-64 overflow-hidden">
+          <img alt="content" class="object-cover object-center h-full w-full"
+            src="{{url_for('static', filename='mod6.webp')}}">
+        </div>
+        <h2 class="text-xl font-medium title-font text-slate-950 mt-5">Bone Fracture Detection</h2>
+        <p class="text-base leading-relaxed mt-2 text-slate-950">Bone Fracture Detection using Bone X-Ray <br>
+          Sometimes Doctors fail to spot a minute Fracture whereas this model will help to detect any fractures in the
+          Patient's X-Ray.</p>
+        <a href="/Bone_Fracture_Detection"
+          class="text-Slate-50 inline-flex items-center mt-3 btn btn-outline-dark">Check Out
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 <blockquote class="blockquote text-center my-3">
-  <p class="mb-0">We will make Human Beings have a Better Life! </p>
-  <footer class="blockquote-footer">Team Hacking Paradox </footer>
+  <p class="mb-0">We will make Human Beings have a Better Life!</p>
+  <footer class="blockquote-footer">Team Hacking Paradox</footer>
 </blockquote>
 {%endblock%}
-{%block content1%}
-<li class="nav-item">
-  <a class="nav-link text-muted" href="#footer">About</a>
-</li>
-{%endblock%}
+
+
 
 {%block content2%}
+
 {% if status == true %}
-<a href="javascript:void(0);" class="btn-user dropdown-toggle media align-items-center" data-toggle="dropdown"
-  data-sidebar="true" aria-expanded="false">
+
+<a href="javascript:void(0);" class="btn-user dropdown-toggle media align-items-center dropdown-menu-right" data-toggle="dropdown"
+  data-sidebar="true" aria-expanded="false" style="color:dodgerblue">
   <img class="mr-2" src="/static/profile.png" style="width:40px; height:40px;" alt="avatar">
   {{ username }}
+</a>
   {% else %}
   <a class="nav-link text-muted mx-3" href="/login">
     Login
     {% endif %}</a>
   </li>
-
   {%endblock%}
+
+
+
+{%block content1%}
+<li class="nav-item">
+  <a class="nav-link text-muted" href="#footer">About Us</a>
+</li>
+{%endblock%}
