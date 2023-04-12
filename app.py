@@ -96,7 +96,8 @@ def login_user():
                 tag="Wrong password"
                 return render_template('login.html',alrmsg=tag)
         else:
-            print("No User")
+            tag="No such User Exists!Please Register Yourself!"
+            return render_template('login.html',alrmsg=tag)
     return render_template('login.html')
 
 
