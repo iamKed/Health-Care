@@ -3,59 +3,14 @@
 
 
 {% if status == true %}
-<div
-  data-te-modal-init
-  class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
-  id="rightTopModal"
-  tabindex="-1"
-  aria-labelledby="rightTopModalLabel"
-  aria-hidden="true">
-  <div
-    data-te-modal-dialog-ref
-    class="pointer-events-none absolute right-7 h-auto w-full translate-x-[100%] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px]">
-    <div
-      class="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600">
-      <div
-        class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
-        <!--Modal title-->
-        <h5
-          class="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200"
-          id="exampleModalLabel">
-          Modal title
-        </h5>
-        <!--Close button-->
-        <button
-          type="button"
-          class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
-          data-te-modal-dismiss
-          aria-label="Close">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="h-6 w-6">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-
-      <!--Modal body-->
-      <div class="relative flex-auto p-4" data-te-modal-body-ref>
-        Welcome Back {{username}} !
-      </div>
-
-    
-    </div>
-  </div>
+<div class="alert alert-success alert-dismissible">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Login Successful!</strong> Welcome back {{username}} !
 </div>
-
 {%else%}
-<p></p>
+<div class="alert alert-warning">
+  <strong>Login Required!</strong> You should <a href="/login" class="alert-link">login</a> to use our Services...
+</div>
 {% endif %}
 
 
@@ -226,7 +181,7 @@
         <h2 class="text-xl font-medium title-font text-slate-950 mt-5">Diabetes Prediction</h2>
         <p class="text-base leading-relaxed mt-2 text-slate-950">Diabetes Prediction using Machine Learning <br>
           This is the section Where you can know are you diabetes patient or not.</p>
-        <a href="/Diabetes_Prediction" class="text-Slate-50 inline-flex items-center mt-3 btn btn-outline-dark">Check
+        <a href="/diabetes" class="text-Slate-50 inline-flex items-center mt-3 btn btn-outline-dark">Check
           Out
           <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             class="w-4 h-4 ml-2" viewBox="0 0 24 24">
@@ -335,23 +290,21 @@
 {%block content2%}
 
 {% if status == true %}
-
-<a href="javascript:void(0);" class="btn-user dropdown-toggle media align-items-center dropdown-menu-right navbar-nav"
-  data-toggle="dropdown" data-sidebar="true" aria-expanded="false" style="color:dodgerblue">
+<a href="javascript:void(0);" class="btn-user dropdown-toggle media align-items-center" data-toggle="dropdown"
+  data-sidebar="true" aria-expanded="false">
   <img class="mr-2" src="/static/profile.png" style="width:40px; height:40px;" alt="avatar">
   {{ username }}
-</a>
 {% else %}
-<a class="nav-link text-muted mx-3" href="/login">
-  Login
-  {% endif %}</a>
+<a class="nav-link text-muted mx-3 slide" href="/login">
+  Login</a> 
+  {% endif %}
 </li>
 {%endblock%}
 
 
 
 {%block content1%}
-<li class="nav-item">
+<!-- <li class="nav-item"> -->
   <a class="nav-link text-muted" href="#foot">About Us</a>
-</li>
+<!-- </li> -->
 {%endblock%}

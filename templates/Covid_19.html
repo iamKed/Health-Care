@@ -42,8 +42,7 @@
   <form action="{{url_for('getcovidresult')}}" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label for="exampleFormControlFile1">Upload Chest X-Ray </label>
-      <input type="file" class="form-control-file mx-3" id="covid_image" name="covid" onchange="previewImage(event);">
-      <img id="#preview-selected-image" src="#" alt="img_preview" />
+      <input type="file" class="form-control-file mx-3" id="covid_image" name="covid" >
     </div>
     <center>
       <button type="submit" class="btn btn-outline-dark">Predict</button>

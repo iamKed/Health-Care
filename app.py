@@ -139,14 +139,14 @@ def diabetes():
         para=['HighBP', 'HighChol', 'CholCheck', 'BMI', 'Smoker', 'Stroke',
                'HeartDiseaseorAttack', 'PhysActivity', 'Veggies', 'HvyAlcoholConsump',
                'GenHlth', 'MentHlth', 'PhysHlth', 'DiffWalk', 'Age', 'Education',
-               'Income'],
+               'Income']
         tip=[para]
         res=model_diabetes.predict(np.array(tip))
         if res[0]==0:
             answer="Non-Diabetic"
         else:
             answer="Diabetic"
-    return render_template('diabetes.html',res=answer)
+    return render_template('diabetes.html',status=app.config['LOGIN_STATUS'],username=app.config['USERNAME'])
 @app.route('/Bone_Fracture_Detection')
 def Bone_Fracture_Detection():
     return render_template("Bone_Fracture.html",status=app.config['LOGIN_STATUS'],username=app.config['USERNAME'])

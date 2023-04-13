@@ -1,37 +1,173 @@
 {%extends "index.html" %}
 {%block content%}
 
-<h1 class="display-3 mx-3">Diabets Detection <h2>(Accuracy : 94%)</h1>
-<div class="container my-3">
-    <legend>Predict Your Diabetes Condition</legend>
-    <form style="border:2px solid rgb(177, 194, 186);padding:22px;border-radius:25px" method="post"
-        action="{{url_for('getValue')}}">
-        <div class="form">
-            <!-- Form Here -->  
+<h1 class="display-3 mx-3">Diabetes Detection  <h2>(Accuracy : #%)</h1>
+  <div class="container my-3">
+    <legend>Predict whether you have diabetes or not! Right Now</legend>
+    <form style="border:2px solid rgb(177, 194, 186);padding:22px;border-radius:25px" method="post" action="{{url_for('getValue')}}">
+      <div class="form">
+        <p>Please Enter the Following Details</p>
+        <hr>
+  
+        <!-- ['HighBP', 'HighChol', 'CholCheck', 'BMI', 'Smoker', 'Stroke',
+  #        'HeartDiseaseorAttack', 'PhysActivity', 'Veggies', 'HvyAlcoholConsump',
+  #        'GenHlth', 'MentHlth', 'PhysHlth', 'DiffWalk', 'Age', 'Education',
+  #        'Income'],
+   -->
+        <label for="mail">Mail-Id : </label>
+        <input type="mail" id="mail" class="form-control" name="mail" required>
+  
+        <label for="age">HighBP : </label>
+        <input type="number" id="age" class="form-control" name="age">
+  
+        <div class="input-group mb-3 my-3">
+          <div class="input-group-append">
+            <label class="input-group-text" for="inputGroupSelect02">HighChol : </label>
+          </div>
+  
+          <select class="custom-select" id="inputGroupSelect02" name="sex" required>
+            <option selected value="1">Male</option>
+            <option value="0">Female</option>
+          </select>
         </div>
-        <center><button type="submit" class="btn btn-outline-dark" name="submit">Predict</button></center>
+  
+        <div class="input-group mb-3 my-3">
+          <div class="input-group-append">
+            <label class="input-group-text" for="inputGroupSelect02">CholCheck :  </label>
+          </div>
+  
+          <select class="custom-select" id="inputGroupSelect02" name="chaistpain">
+            <option selected value="0">Typical Angina</option>
+            <option value="1">Atypical Angina</option>
+            <option value="2">Non-Anginal pain</option>
+            <option value="3">Asymptomatic</option>
+          </select>
+        </div>
+  
+        <label for="bp">BMI : </label>
+        <input type="number" id="bp" class="form-control" name="bloodpressure">
+  
+        <label for="sc">Smoker</label>
+        <input type="number" id="sc" class="form-control" name="serum">
+  
+        <div class="input-group mb-3 my-3">
+          <div class="input-group-append">
+            <label class="input-group-text" for="inputGroupSelect02">Stroke : </label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect02" placeholder="Chest-Pain Type" name="bloodsugar">
+            <option selected value="0" >Fasting blood sugar < 120</option>
+            <option value="1" >Fasting blood sugar > 120</option>
+  
+          </select>
+        </div>
+  
+        <div class="input-group mb-3">
+          <div class="input-group-append">
+            <label class="input-group-text" for="inputGroupSelect02">HeartDiseaseorAttack :  </label>
+          </div>
+  
+  
+          <select class="custom-select" id="inputGroupSelect02"  name="wave">
+            <option selected value="0">Normal</option>
+            <option value="1">Having ST-T wave abnormality</option>
+            <option value="2">Showing probable or definite left
+              ventricular hypertrophy</option>
+  
+            </select>
+          </div>
+              <label for="hrate">PhysActivity : </label>
+            <input type="number" id="hrate" class="form-control" name="hrate" itemid="hrate">
+  
+  
+  
+        <div class="input-group mb-3 my-3">
+          <div class="input-group-append">
+            <label class="input-group-text" for="inputGroupSelect02"> Veggies :  </label>
+          </div>
+  
+          <select class="custom-select" id="inputGroupSelect01" name="anigna">
+            <option selected value="1">Yes </option>
+            <option value="0">No </option>
+          </select>
+        </div>
+  
+        <label for="oldpeak"> HvyAlcoholConsump :  </label>
+        <input type="number" step="0.01" id="oldpeak" class="form-control" name="oldpeak" itemid="oldpeak">
+  
+        <div class="input-group mb-3 my-3">
+          <div class="input-group-append">
+            <label class="input-group-text" for="inputGroupSelect02">GenHlth : </label>
+          </div>
+  
+          <select class="custom-select" id="inputGroupSelect01" name="slope">
+            <option selected value="0">0</option>
+            <option value="1">1 </option>
+            <option value="2">2 </option>
+          </select>
+        </div>
+  
+        <div class="input-group mb-3 my-3">
+          <div class="input-group-append">
+            <label class="input-group-text" for="inputGroupSelect02"> MentHlth :  </label>
+          </div>
+  
+          <select class="custom-select" id="inputGroupSelect01" name="ca">
+            <option selected value="0">0 </option>
+            <option value="1">1 </option>
+            <option value="2">2 </option>
+            <option value="2">3 </option>
+          </select>
+        </div>
+  
+        <div class="input-group mb-3 my-3">
+          <div class="input-group-append">
+            <label class="input-group-text" for="inputGroupSelect02"> PhysHlth : </label>
+          </div>
+  
+          <select class="custom-select" id="inputGroupSelect01" name="thal">
+            <option selected value="1"> Normal </option>
+            <option value="2">Fixed Defect </option>
+            <option value="3"> Reversable Defect </option>
+          </select>
+        </div>
+  
+  
+        <label for="oldpeak"> DiffWalk :  </label>
+        <input type="number" step="0.01" id="oldpeak" class="form-control" name="oldpeak" itemid="oldpeak">
+  
+        <label for="oldpeak"> Age :  </label>
+        <input type="number" step="0.01" id="oldpeak" class="form-control" name="oldpeak" itemid="oldpeak">
+  
+        <label for="oldpeak"> Education:  </label>
+        <input type="number" step="0.01" id="oldpeak" class="form-control" name="oldpeak" itemid="oldpeak">
+  
+  
+        <label for="oldpeak"> Income :  </label>
+        <input type="number" step="0.01" id="oldpeak" class="form-control" name="oldpeak" itemid="oldpeak">
+  
+  
+      </div>
+      <br> <br>
+      <center> <button type="submit" class="btn btn-outline-dark" name="submit">Predict</button> </center>
     </form>
-    <br>
-    <hr>
-    <label class="input-group-text bg-dark text-white" for="exampleForm2"> Prediction Ans : </label>
-    <span class="custom-select">{{ ans }}</span>
-</div>
+    <br><hr>
+    <!-- <label class="input-group-text bg-dark text-white"for="answer">  Prediction Ans :  </label>
+    <span class="custom-select">{{ ans }}</span> -->
+  </div>
+  
 
 
 
 {%endblock%}
-
 {%block content2%}
 {% if status == true %}
 <a href="javascript:void(0);" class="btn-user dropdown-toggle media align-items-center" data-toggle="dropdown"
   data-sidebar="true" aria-expanded="false">
-  <img class="mr-2" src="/static/profile.png" style="width:40px; height:40px;"
-    alt="avatar">
+  <img class="mr-2" src="/static/profile.png" style="width:40px; height:40px;" alt="avatar">
   {{ username }}
 {% else %}
-<a class="nav-link text-muted mx-3" href="/login">
-  Login
-  {% endif %}</a>
+<a class="nav-link text-muted mx-3 slide" href="/login">
+  Login</a> 
+  {% endif %}
 </li>
-
 {%endblock%}

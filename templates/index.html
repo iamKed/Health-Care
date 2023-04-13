@@ -28,37 +28,72 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
-<body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary" style="color:#6eff54">
+<body style="background-image: url(/static/19366.jpg);">
+  <nav class=" bg-white w-full flex relative justify-between items-center mx-auto px-8 h-20" >
+    <div class="inline-flex">
+      <a class="navbar-brand" href="/"><span style="color: #2b7e33;">Hacking</span><span
+          style="color: #000000;">Paradox</span>
+      </a>
+      <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0"> -->
+        <!-- <li class="nav-item"> -->
+          <a class="nav-link text-muted mx-3" href="/#modules">Modules</a>
+        <!-- </li> -->
+        {%block content1%}
+        {%endblock%}
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="dropdown pmd-dropdown pmd-user-info mr-auto ">
+        </div>
+      <!-- </ul> -->
+
+    </div>
+
+    <div class="flex-initial">
+      <div class="flex justify-end items-center relative">
+
+        <div class="block">
+          <div class="inline relative">
+            {%block content2%}
+              {%endblock%}
+            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+              <a class="dropdown-item" href="/logout">Logout</a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end login -->
+  </nav>
+
+
+
+
+
+
+
+
+  <!-- --------------------------------------------------------------------------------------------------------------- -->
+  <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="/"><span style="color: #2b7e33;">Hacking</span><span
           style="color: #000000;">Paradox</span>
       </a>
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link text-muted mx-3" href="/#modules">Modules</a>
-        </li>
-        {%block content1%}
-        {%endblock%}
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-        <span class="navbar-toggler-icon"></span>
       </button>
-        <div class="dropdown pmd-dropdown pmd-user-info mr-auto ">
-          <a>{%block content2%}
-            {%endblock%}</a>
-          <ul class="dropdown-menu dropdown-menu-right" role="menu">
-            <a class="dropdown-item" href="/logout">Logout</a>
-          </ul>
-        </div>
-      </ul>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        
+      </div>
     </div>
-    </div>
-  </nav>
+  </nav> -->
 
 
-<!-- 
+
+  <!-- 
   <header class="text-gray-600 body-font">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
       <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
@@ -85,8 +120,8 @@
 
   {%block content%}
   {%endblock%}
-  <footer class="text-gray-600 body-font container-fluid" id="foot">
-    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+  <footer class="text-gray-600 body-font container-fluid" id="foot" style="background: linear-gradient(0.95turn, #ffffff, #f3f0f0, #d2f9cb)">
+    <div class="container py-2 mx-auto flex items-center sm:flex-row flex-col">
       <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
         <img src="/static/Logo.png" alt="Logo" srcset="" style="width:50px;height:50px">
 
