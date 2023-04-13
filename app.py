@@ -66,11 +66,9 @@ def login_user():
         password=request.form['password']
         print(mail,password)
         user = New_Authentication.query.filter_by(email=mail).first()
-        
-        # print((user,passw))
+
         if user:
-            # passw=New_Authentication.query.filter_by(password=password)
-            # print(select(New_Authentication.password).where(New_Authentication.email == mail))
+            tag=''
             with db.engine.connect() as conn:
                 result = conn.execute(select(New_Authentication.password).where(New_Authentication.email==mail))
                 passw=(str(result.all()[0][0]))
@@ -78,25 +76,19 @@ def login_user():
                 app.config['USERNAME']=(str(name.all()[0][0]))
                 print(app.config['USERNAME'],passw)
 
-
-            # c = conn.cursor()
-            # c.execute(f"SELECT * FROM New_Authentication WHERE email='{email}'")
-            # rows = c.fetchall()
-            # for row in rows:
-            #     print(row)
             if passw==password:
-            # print(New_Authentication.query.filter_by(email=email,password=password).first())
                 app.config['LOGIN_STATUS']=True
-                # app.config['app.config['USERNAME']']=user
-                # app.config['app.config['USERNAME']']=New_Authentication.name.filter_by(email=email,password=password)
                 print(app.config['USERNAME'])
                 return redirect('/')
+            
             else:
                 app.config['USERNAME']=''
                 tag="Wrong password"
                 return render_template('login.html',alrmsg=tag)
+            
         else:
-            tag="No such User Exists!Please Register Yourself!"
+            tag='No such User Exists! Please Register Yourself!'
+            # tag="No such User Exists!Please Register Yourself!"
             return render_template('login.html',alrmsg=tag)
     return render_template('login.html')
 
@@ -106,7 +98,6 @@ def logout_user():
     app.config['LOGIN_STATUS']=False
     app.config['USERNAME']=''
     return redirect('/')
-
 
 @app.route('/')
 def refresh():

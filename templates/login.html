@@ -1,9 +1,7 @@
 {%extends 'index.html'%}
 
 {%block content%}
-{% if alrmsg!='' %}
-{{alrmsg}}
-{% endif %}
+
 <section class="vh-100" style="background: linear-gradient(0.95turn, #9A616D, #ad727f, #ccffcc)">
   <div class="container py-3 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -36,10 +34,20 @@
                     <input type="password" id="pass" class="form-control form-control-lg" required name="password" />
                     <label class="form-label" for="pass">Password</label>
                   </div>
-
+                  {% if alrmsg %}
+                  <div class="alert alert-danger" style="color: red;">
+                    {{alrmsg}} !
+                    <span></span>
+                  </div>
+                  {%else%}
+                  <p></p>
+                  {% endif %}
                   <div class="pt-1 mb-4">
                     <!-- <button class="btn btn-dark btn-lg btn-block" type="submit">Login</button> -->
-                    <button type="submit" class="btn btn-outline-dark btn-lg btn-block">Login</button>
+                    <button type="submit" class="btn btn-outline-dark btn-lg btn-block" type="button"
+                      class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                      data-te-toggle="modal" data-te-target="#rightTopModal" data-te-ripple-init
+                      data-te-ripple-color="light">Login</button>
                   </div>
 
                   <a class="small text-muted" href="#!">Forgot password?</a>
