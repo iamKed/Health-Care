@@ -26,6 +26,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 app.config['LOGIN_STATUS']=False
 app.config['USERNAME']=str('')
+app.config['LOGIN_COUNT']=0
 answer=''
 app.config['UPLOAD_FOLDER']=r'static/files'
 class Mainn(db.Model):
@@ -88,7 +89,6 @@ def login_user():
             
         else:
             tag='No such User Exists! Please Register Yourself!'
-            # tag="No such User Exists!Please Register Yourself!"
             return render_template('login.html',alrmsg=tag)
     return render_template('login.html')
 
@@ -96,13 +96,16 @@ def login_user():
 @app.route('/logout',methods=['GET','POST'])
 def logout_user():
     app.config['LOGIN_STATUS']=False
+    app.config['LOGIN_COUNT']=int(0)
     app.config['USERNAME']=''
     return redirect('/')
 
 @app.route('/')
 def refresh():
     print("Ked",app.config['USERNAME'],app.config['USERNAME'])
-    return render_template("homepage.html",status=app.config['LOGIN_STATUS'],username=app.config['USERNAME'])
+    if app.config['LOGIN_STATUS']==True:
+        app.config['LOGIN_COUNT']=app.config['LOGIN_COUNT']+1
+    return render_template("homepage.html",status=app.config['LOGIN_STATUS'],username=app.config['USERNAME'],count=app.config['LOGIN_COUNT'])
 
 @app.route('/registration',methods=['GET', 'POST'])
 def registration():

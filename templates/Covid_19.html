@@ -60,16 +60,23 @@
 </center>
 {%endblock%}
 
+
 {%block content2%}
+
 {% if status == true %}
+
 <a href="javascript:void(0);" class="btn-user dropdown-toggle media align-items-center" data-toggle="dropdown"
   data-sidebar="true" aria-expanded="false">
   <img class="mr-2" src="/static/profile.png" style="width:40px; height:40px;" alt="avatar">
   {{ username }}
-  {% else %}
-  <a class="nav-link text-muted mx-3" href="/login">
-    Login
-    {% endif %}</a>
-  </li>
+</a>
+<ul class="dropdown-menu dropdown-menu-right" role="menu">
+  <a class="dropdown-item" href="/logout">Logout</a>
+</ul>
+{% else %}
+<a class="nav-link text-muted mx-3 slide" href="/login">
+  Login
+</a> 
+  {% endif %}
 
-  {%endblock%}
+{%endblock%}

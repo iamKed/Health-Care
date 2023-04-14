@@ -2,17 +2,17 @@
 {%block content%}
 
 
-{% if status == true %}
+{% if status == true and count==1 %}
 <div class="alert alert-success alert-dismissible">
   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
   <strong>Login Successful!</strong> Welcome back {{username}} !
 </div>
-{%else%}
+{% endif %}
+{% if status == false%}
 <div class="alert alert-warning">
   <strong>Login Required!</strong> You should <a href="/login" class="alert-link">login</a> to use our Services...
 </div>
 {% endif %}
-
 
 
 <div class="view opacity-50" style="
@@ -294,12 +294,17 @@
 <a href="javascript:void(0);" class="btn-user dropdown-toggle media align-items-center" data-toggle="dropdown"
   data-sidebar="true" aria-expanded="false">
   <img class="mr-2" src="/static/profile.png" style="width:40px; height:40px;" alt="avatar">
-  {{ username }}</a>
+  {{ username }}
+</a>
+<ul class="dropdown-menu dropdown-menu-right" role="menu">
+  <a class="dropdown-item" href="/logout">Logout</a>
+</ul>
 {% else %}
 <a class="nav-link text-muted mx-3 slide" href="/login">
-  Login</a> 
+  Login
+</a> 
   {% endif %}
-</li>
+
 {%endblock%}
 
 
