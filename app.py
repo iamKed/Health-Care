@@ -11,7 +11,7 @@ from sklearn.preprocessing import StandardScaler
 from sqlalchemy import Engine, create_engine, select 
 warnings.filterwarnings('ignore')
 model= pickle.load(open("Trained_Models/heart.pkl",'rb'))
-model_diabetes=pickle.load(open("Trained_Models/diebites_model_best.pkl",'rb'))
+model_diabetes=pickle.load(open("Trained_Models/DiabetesModel96.pkl",'rb'))
 from gevent.pywsgi import WSGIServer 
 # engine=create_engine('sqlite:///database.db')
 from werkzeug.utils import secure_filename
@@ -136,16 +136,16 @@ def Heart_Disease_Prediction():
 def diabetes():
     if request.method=='POST':
         # diver code for testing the model
-        para=['HighBP', 'HighChol', 'CholCheck', 'BMI', 'Smoker', 'Stroke',
-               'HeartDiseaseorAttack', 'PhysActivity', 'Veggies', 'HvyAlcoholConsump',
-               'GenHlth', 'MentHlth', 'PhysHlth', 'DiffWalk', 'Age', 'Education',
-               'Income']
+        para=[float(request.form['hlbp']), float(request.form['chol']), float(request.form['chol2']), float(request.form['bmi']),float( request.form['smoker']), float(request.form['stroke']),
+               float(request.form['cdmi']), float(request.form['phyacti']),float( request.form['veg']),  float(request.form['drink']),
+                float(request.form['genhealth']), float(request.form['mh']), float(request.form['ph']), float(request.form['walk']), float(request.form['age']), float(request.form['education']), float(request.form['income'])]
         tip=[para]
         res=model_diabetes.predict(np.array(tip))
         if res[0]==0:
             answer="Non-Diabetic"
         else:
             answer="Diabetic"
+        return render_template('answer.html',res=answer)
     return render_template('diabetes.html',status=app.config['LOGIN_STATUS'],username=app.config['USERNAME'])
 @app.route('/Bone_Fracture_Detection')
 def Bone_Fracture_Detection():

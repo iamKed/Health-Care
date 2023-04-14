@@ -290,10 +290,11 @@
 {%block content2%}
 
 {% if status == true %}
+
 <a href="javascript:void(0);" class="btn-user dropdown-toggle media align-items-center" data-toggle="dropdown"
   data-sidebar="true" aria-expanded="false">
   <img class="mr-2" src="/static/profile.png" style="width:40px; height:40px;" alt="avatar">
-  {{ username }}
+  {{ username }}</a>
 {% else %}
 <a class="nav-link text-muted mx-3 slide" href="/login">
   Login</a> 
