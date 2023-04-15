@@ -1,224 +1,228 @@
 {%extends "index.html" %}
 {%block content%}
-<h1 class="display-3 mx-3">Diabetes Detection  <h2>(Accuracy : #%)</h1>
-  <div class="container my-3 mx-3" style="border:2px solid rgb(177, 194, 186);padding:22px;border-radius:25px">
-    <legend>Predict whether you have diabetes or not! Right Now</legend>
-    <form  method="post" action="{{url_for('diabetes')}}">
-      <div class="form">
-        <p>Please Enter the Following Details</p>
-        <hr>
-  
-        <!-- ['HighBP', 'HighChol', 'CholCheck', 'BMI', 'Smoker', 'Stroke',
-  #        'HeartDiseaseorAttack', 'PhysActivity', 'Veggies', 'HvyAlcoholConsump',
-  #        'GenHlth', 'MentHlth', 'PhysHlth', 'DiffWalk', 'Age', 'Education',
-  #        'Income'],
-   -->
-   <label for="mail">Mail-Id : </label>
-   <input type="mail" id="mail" class="form-control" name="mail" required>
-  
-   <div class="input-group mb-3 my-3">
-     <div class="input-group-append">
-       <label class="input-group-text" for="inputGroupSelect02">Blood Pressure Category : </label>
-     </div>
-  
-     <select class="custom-select" id="inputGroupSelect02" name="hlbp" required>
-       <option selected value="1">High BP </option>
-       <option value="0">Low BP</option>
-     </select>
-   </div>
-  
-   <div class="input-group mb-3 my-3">
-     <div class="input-group-append">
-       <label class="input-group-text" for="inputGroupSelect02">Cholestrol Category : </label>
-     </div>
-  
-     <select class="custom-select" id="inputGroupSelect02" name="chol" required>
-       <option selected value="1">High Cholestrol</option>
-       <option value="0">Low Cholestrol</option>
-     </select>
-   </div>
-  
-   <div class="input-group mb-3 my-3">
-     <div class="input-group-append">
-       <label class="input-group-text" for="inputGroupSelect02">Have You Checked Your Cholestrol In Last 5 Years :  </label>
-     </div>
-  
-     <select class="custom-select" id="inputGroupSelect02" name="chol2" required>
-       <option value="1">Yes</option>
-       <option selected value="0">No</option>
-     </select>
-   </div>
-  
-   <label for="bp">BMI : </label>
-   <input type="number" id="bp" class="form-control" name="bmi" required>
-  
-  
-   <div class="input-group mb-3 my-3">
-     <div class="input-group-append">
-       <label class="input-group-text" for="inputGroupSelect02">Have You Smoked At Least 5 Packets : </label>
-     </div>
-     <select class="custom-select" id="inputGroupSelect02" placeholder="Chest-Pain Type" name="smoker" required>
-       <option value="1">Yes</option>
-       <option selected value="0" >No</option>
-  
-     </select>
-   </div>
-   <div class="input-group mb-3 my-3">
-     <div class="input-group-append">
-       <label class="input-group-text" for="inputGroupSelect02">Did You Have Stroke Ever : </label>
-     </div>
-     <select class="custom-select" id="inputGroupSelect02" placeholder="Chest-Pain Type" name="stroke">
-       <option value="1">Yes</option>
-       <option selected value="0" >No</option>
-  
-     </select>
-   </div>
-  
-   <div class="input-group mb-3 my-3">
-     <div class="input-group-append">
-       <label class="input-group-text" for="inputGroupSelect02">Heart Disease Type (Coronary Heart Disease Or Myocardial Infarction) : </label>
-     </div>
-     <select class="custom-select" id="inputGroupSelect02" placeholder="Chest-Pain Type" name="cdmi">
-       <option value="1">Yes</option>
-       <option selected value="0">No</option>
-  
-     </select>
-   </div>
-  
-  
-     <div class="input-group mb-3 my-3">
-       <div class="input-group-append">
-         <label class="input-group-text" for="inputGroupSelect02">Do You Exercise (Physical Activity Since Last 30 Days) : </label>
-       </div>
-       <select class="custom-select" id="inputGroupSelect02" placeholder="Chest-Pain Type" name="phyacti">
-         <option value="1">Yes</option>
-         <option selected value="0" >No</option>
-  
-       </select>
-     </div>
-  
-     <div class="input-group mb-3 my-3">
-       <div class="input-group-append">
-         <label class="input-group-text" for="inputGroupSelect02">Do You Consume Fruits 1 Or More Times Per Day : </label>
-       </div>
-       <select class="custom-select" id="inputGroupSelect02" placeholder="Chest-Pain Type" name="fruit">
-         <option value="1">Yes</option>
-         <option selected value="0" >No</option>
-  
-       </select>
-     </div>
-  
-  
-   <div class="input-group mb-3 my-3">
-     <div class="input-group-append">
-       <label class="input-group-text" for="inputGroupSelect02"> Do You Consume Veggies 1 Or More Times Per Day : </label>
-     </div>
-  
-     <select class="custom-select" id="inputGroupSelect01" name="veg">
-       <option selected value="1">Yes </option>
-       <option value="0">No </option>
-     </select>
-   </div>
-  
-   <div class="input-group mb-3 my-3">
-     <div class="input-group-append">
-       <label class="input-group-text" for="inputGroupSelect02">Do You Drink More Than 7 Times Per Week : </label>
-     </div>
-     <select class="custom-select" id="inputGroupSelect02" placeholder="Chest-Pain Type" name="drink">
-       <option value="1">Yes</option>
-       <option selected value="0" >No</option>
-  
-     </select>
-   </div>
-  
-   <div class="input-group mb-3 my-3">
-     <div class="input-group-append">
-       <label class="input-group-text" for="inputGroupSelect02">Do You Have Any Kind Of Health Care Coverage : </label>
-     </div>
-  
-     <select class="custom-select" id="inputGroupSelect01" name="healcov">
-       <option value="1">Yes </option>
-       <option selected value="0">No</option>
-  
-     </select>
-   </div>
-  
-   <div class="input-group mb-3 my-3">
-     <div class="input-group-append">
-       <label class="input-group-text" for="inputGroupSelect02">Was there a time in the past 12 months when you needed to see a doctor but could not because of cost? :  </label>
-     </div>
-  
-     <select class="custom-select" id="inputGroupSelect01" name="cost">
-       <option value="1">Yes </option>
-       <option value="0">No </option>
-  
-     </select>
-   </div>
-  
-   <div class="input-group mb-3 my-3">
-     <div class="input-group-append">
-       <label class="input-group-text" for="inputGroupSelect02"> Would you say that in general your health is : </label>
-     </div>
-  
-     <select class="custom-select" id="inputGroupSelect01" name="genhealth">
-       <option selected value="1"> Excellent </option>
-       <option value="2">Very Good </option>
-       <option value="3"> Good </option>
-       <option value="4"> Fair  </option>
-       <option value="5"> Poor  </option>
-     </select>
-   </div>
-  
-  
-   <label for="oldpeak"> Mental Health (0-30) :  </label>
-   <input type="number" step="0.01" id="oldpeak" class="form-control" name="mh" itemid="oldpeak">
-  
-  
-   <label for="oldpeak"> Physical Health (0-30) :  </label>
-   <input type="number" step="0.01" id="oldpeak" class="form-control" name="ph" itemid="oldpeak">
-  
-  
-   <div class="input-group mb-3 my-3">
-     <div class="input-group-append">
-       <label class="input-group-text" for="inputGroupSelect02">Do You Have Serious Difficulty for Walking Or Climbing Stairs : </label>
-     </div>
-     <select class="custom-select" id="inputGroupSelect02" placeholder="Chest-Pain Type" name="walk">
-       <option value="1">Yes</option>
-       <option selected value="0" >No</option>
-  
-     </select>
-   </div>
-  
-  
-   <div class="input-group mb-3 my-3">
-     <div class="input-group-append">
-       <label class="input-group-text" for="inputGroupSelect02">Gender : </label>
-     </div>
-     <select class="custom-select" id="inputGroupSelect02" placeholder="Chest-Pain Type" name="gen">
-       <option value="1">Male</option>
-       <option selected value="0" >Female</option>
-  
-     </select>
-   </div>
-   <label for="oldpeak"> Age :  </label>
-   <input type="number" step="0.01" id="oldpeak" class="form-control" name="age" itemid="oldpeak">
-  
-   <label for="oldpeak"> Education: (Scale 1-6) </label>
-   <input type="number" step="0.01" id="oldpeak" class="form-control" name="education" itemid="oldpeak">
-  
-  
-   <label for="oldpeak"> Income :  </label>
-   <input type="number" step="0.01" id="oldpeak" class="form-control" name="income" itemid="oldpeak">
-  
-  
-  </div>
-  <br> <br>
-  <center> <button type="submit" class="btn btn-outline-dark" name="submit">Predict</button> </center>
+<h1 class="display-3 mx-3">Diabetes Detection <h2 class="mx-3">(Accuracy : #%)</h1>
+<div class="container my-3 mx-3" style="border:2px solid rgb(177, 194, 186);border-radius:25px">
+  <legend>Predict whether you have diabetes or not! Right Now</legend>
+  <form method="post" action="{{url_for('diabetes')}}">
+    <div class="form">
+      <p>Please Enter the Following Details</p>
+      <hr>
+      <label for="mail">Mail-Id : </label>
+      <input type="mail" id="mail" class="form-control" name="mail" required>
+
+      <div class="input-group mb-3 my-3">
+        <div class="input-group-append">
+          <label class="input-group-text" for="inputGroupSelect02">Blood Pressure Category : </label>
+        </div>
+
+        <select class="custom-select" id="inputGroupSelect02" name="hlbp" required>
+          <option selected value="1">High BP </option>
+          <option value="0">Low BP</option>
+        </select>
+      </div>
+
+      <div class="input-group mb-3 my-3">
+        <div class="input-group-append">
+          <label class="input-group-text" for="inputGroupSelect02">Cholestrol Category : </label>
+        </div>
+
+        <select class="custom-select" id="inputGroupSelect02" name="chol" required>
+          <option selected value="1">High Cholestrol</option>
+          <option value="0">Low Cholestrol</option>
+        </select>
+      </div>
+
+      <div class="input-group mb-3 my-3">
+        <div class="input-group-append">
+          <label class="input-group-text" for="inputGroupSelect02">Have You Checked Your Cholestrol In Last 5 Years :
+          </label>
+        </div>
+
+        <select class="custom-select" id="inputGroupSelect02" name="chol2" required>
+          <option value="1">Yes</option>
+          <option selected value="0">No</option>
+        </select>
+      </div>
+
+      <label for="bp">BMI : </label>
+      <input type="number" id="bp" class="form-control" name="bmi" required>
+
+
+      <div class="input-group mb-3 my-3">
+        <div class="input-group-append">
+          <label class="input-group-text" for="inputGroupSelect02">Have You Smoked At Least 5 Packets : </label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect02" placeholder="Chest-Pain Type" name="smoker" required>
+          <option value="1">Yes</option>
+          <option selected value="0">No</option>
+
+        </select>
+      </div>
+      <div class="input-group mb-3 my-3">
+        <div class="input-group-append">
+          <label class="input-group-text" for="inputGroupSelect02">Did You Have Stroke Ever : </label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect02" placeholder="Chest-Pain Type" name="stroke">
+          <option value="1">Yes</option>
+          <option selected value="0">No</option>
+
+        </select>
+      </div>
+
+      <div class="input-group mb-3 my-3">
+        <div class="input-group-append">
+          <label class="input-group-text" for="inputGroupSelect02">Heart Disease Type (Coronary Heart Disease Or
+            Myocardial Infarction) : </label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect02" placeholder="Chest-Pain Type" name="cdmi">
+          <option value="1">Yes</option>
+          <option selected value="0">No</option>
+
+        </select>
+      </div>
+
+
+      <div class="input-group mb-3 my-3">
+        <div class="input-group-append">
+          <label class="input-group-text" for="inputGroupSelect02">Do You Exercise (Physical Activity Since Last 30
+            Days) : </label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect02" placeholder="Chest-Pain Type" name="phyacti">
+          <option value="1">Yes</option>
+          <option selected value="0">No</option>
+
+        </select>
+      </div>
+
+      <div class="input-group mb-3 my-3">
+        <div class="input-group-append">
+          <label class="input-group-text" for="inputGroupSelect02">Do You Consume Fruits 1 Or More Times Per Day :
+          </label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect02" placeholder="Chest-Pain Type" name="fruit">
+          <option value="1">Yes</option>
+          <option selected value="0">No</option>
+
+        </select>
+      </div>
+
+
+      <div class="input-group mb-3 my-3">
+        <div class="input-group-append">
+          <label class="input-group-text" for="inputGroupSelect02"> Do You Consume Veggies 1 Or More Times Per Day :
+          </label>
+        </div>
+
+        <select class="custom-select" id="inputGroupSelect01" name="veg">
+          <option selected value="1">Yes </option>
+          <option value="0">No </option>
+        </select>
+      </div>
+
+      <div class="input-group mb-3 my-3">
+        <div class="input-group-append">
+          <label class="input-group-text" for="inputGroupSelect02">Do You Drink More Than 7 Times Per Week : </label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect02" placeholder="Chest-Pain Type" name="drink">
+          <option value="1">Yes</option>
+          <option selected value="0">No</option>
+
+        </select>
+      </div>
+
+      <div class="input-group mb-3 my-3">
+        <div class="input-group-append">
+          <label class="input-group-text" for="inputGroupSelect02">Do You Have Any Kind Of Health Care Coverage :
+          </label>
+        </div>
+
+        <select class="custom-select" id="inputGroupSelect01" name="healcov">
+          <option value="1">Yes </option>
+          <option selected value="0">No</option>
+
+        </select>
+      </div>
+
+      <div class="input-group mb-3 my-3">
+        <div class="input-group-append">
+          <label class="input-group-text" for="inputGroupSelect02">Was there a time in the past 12 months when you
+            needed to see a doctor but could not because of cost? : </label>
+        </div>
+
+        <select class="custom-select" id="inputGroupSelect01" name="cost">
+          <option value="1">Yes </option>
+          <option value="0">No </option>
+
+        </select>
+      </div>
+
+      <div class="input-group mb-3 my-3">
+        <div class="input-group-append">
+          <label class="input-group-text" for="inputGroupSelect02"> Would you say that in general your health is :
+          </label>
+        </div>
+
+        <select class="custom-select" id="inputGroupSelect01" name="genhealth">
+          <option selected value="1"> Excellent </option>
+          <option value="2">Very Good </option>
+          <option value="3"> Good </option>
+          <option value="4"> Fair </option>
+          <option value="5"> Poor </option>
+        </select>
+      </div>
+
+
+      <label for="oldpeak"> Mental Health (0-30) : </label>
+      <input type="number" step="0.01" id="oldpeak" class="form-control" name="mh" itemid="oldpeak">
+
+
+      <label for="oldpeak"> Physical Health (0-30) : </label>
+      <input type="number" step="0.01" id="oldpeak" class="form-control" name="ph" itemid="oldpeak">
+
+
+      <div class="input-group mb-3 my-3">
+        <div class="input-group-append">
+          <label class="input-group-text" for="inputGroupSelect02">Do You Have Serious Difficulty for Walking Or
+            Climbing Stairs : </label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect02" placeholder="Chest-Pain Type" name="walk">
+          <option value="1">Yes</option>
+          <option selected value="0">No</option>
+
+        </select>
+      </div>
+
+
+      <div class="input-group mb-3 my-3">
+        <div class="input-group-append">
+          <label class="input-group-text" for="inputGroupSelect02">Gender : </label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect02" placeholder="Chest-Pain Type" name="gen">
+          <option value="1">Male</option>
+          <option selected value="0">Female</option>
+
+        </select>
+      </div>
+      <label for="oldpeak"> Age : </label>
+      <input type="number" step="0.01" id="oldpeak" class="form-control" name="age" itemid="oldpeak">
+
+      <label for="oldpeak"> Education: (Scale 1-6) </label>
+      <input type="number" step="0.01" id="oldpeak" class="form-control" name="education" itemid="oldpeak">
+
+
+      <label for="oldpeak"> Income : </label>
+      <input type="number" step="0.01" id="oldpeak" class="form-control" name="income" itemid="oldpeak">
+
+
+    </div>
+    <br> <br>
+    <center> <button type="submit" class="btn btn-outline-dark" name="submit">Predict</button> </center>
   </form>
-  <br><hr>
+  <br>
+  <hr>
   <!-- <label class="input-group-text bg-dark text-white"for="answer">  Prediction Ans :  </label>
   <span class="custom-select">{{ ans }}</span> -->
-  </div>
+</div>
 
 {%endblock%}
 
@@ -237,8 +241,7 @@
 {% else %}
 <a class="nav-link text-muted mx-3 slide" href="/login">
   Login
-</a> 
-  {% endif %}
+</a>
+{% endif %}
 
 {%endblock%}
-

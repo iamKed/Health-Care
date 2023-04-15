@@ -1,0 +1,47 @@
+.bg-image2{
+
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(4px);
+    /* content: attr(custom-tooltip); */
+    /* background-image: url("lock.jpg"); */
+
+    /* Full height */
+    /* height: 10%;
+    width: 10%; */
+
+    transition: .1s ease;
+    opacity:1;
+  /* Center and scale the image nicely */
+}
+
+.bg-image2:hover {
+
+
+    transform: scale(1.02);
+
+ /* position: relative; */
+}
+
+
+.bg-image2 #idbut{
+    /* transform-style: flat; */
+    filter: blur(0px);
+}
+
+
+.covsec{
+  background-image: linear-gradient(rgba(4,9,30,0.6),rgba(4,9,30,0.5)), url(covid2.jpg);
+  background-position: center;
+  background-size: cover;
+  /* min-height: 100vh; */
+}
+
+.transcls :hover{
+  transform: scale(1.02);
+}
+@media only screen and (max-width: 600px) {
+    #tobedis{
+        display: none;
+    }
+  }

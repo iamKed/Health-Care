@@ -3,7 +3,7 @@
 {%block content%}
 
 <section class="h-100"
-    style="background-image: linear-gradient( 102.1deg,  rgba(96,221,142,1) 8.7%, rgba(24,138,141,1) 88.1% ) ;">
+    style="background-image: linear-gradient( 102.1deg,  rgb(175, 231, 196) 8.7%, rgb(220, 243, 240) 88.1% ) ;">
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col">
@@ -15,25 +15,25 @@
                         </div>
                         <div class="col-xl-6">
                             <div class="card-body p-md-5 text-black">
-                                <h3 class="mb-3 text-uppercase">Health Care </h3><span style="color: #2b7e33;">~
-                                    Hacking</span><span style="color: #000000;">Paradox</span>
-                                <hr>
-                                <h4 class="mb-5">Create an Account</h4>
+                                <h3 class="mb-3 text-uppercase">Create an Account
+                                </h3>
+                                <hr><br>
+
                                 <form action="{{url_for('registration')}}" method="post">
                                     <div class="row">
                                         <div class="col-md-6 mb-4">
                                             <div class="form-outline">
                                                 <input type="text" id="form3Example1m"
-                                                    class="form-control form-control-lg" required   name="fname"/>
-                                                <label class="form-label" for="form3Example1m" >First
+                                                    class="form-control form-control-lg" required name="fname" />
+                                                <label class="form-label" for="form3Example1m">First
                                                     name</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6 mb-4">
                                             <div class="form-outline">
                                                 <input type="text" id="form3Example1n"
-                                                    class="form-control form-control-lg" required name="lname"/>
-                                                <label class="form-label" for="form3Example1n" >Last
+                                                    class="form-control form-control-lg" required name="lname" />
+                                                <label class="form-label" for="form3Example1n">Last
                                                     name</label>
                                             </div>
                                         </div>
@@ -41,28 +41,31 @@
 
                                     <div class="form-outline mb-4">
                                         <input type="text" id="form3Example97" class="form-control form-control-lg"
-                                            required  name="email"/>
+                                            required name="email" />
                                         <label class="form-label" for="form3Example97">Email ID</label>
                                     </div>
 
 
                                     <div class="form-outline mb-4">
                                         <input type="number" id="form3Example9" class="form-control form-control-lg"
-                                            required name="age"/>
-                                        <label class="form-label" for="form3Example9" >Age</label>
+                                            required name="age" />
+                                        <label class="form-label" for="form3Example9">Age</label>
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <input type="password" id="form3Example9" class="form-control form-control-lg"
-                                            required name="password"/>
-                                        <label class="form-label" for="form3Example9" >Password</label>
+                                        <input type="password" id="form3Example9_ps"
+                                            class="form-control form-control-lg" required name="password"
+                                            onkeyup="PassValidate()" />
+                                        <label class="form-label" for="form3Example9">Password</label>
+                                        <div id="passwordInfo"></div>
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <input type="password" id="form3Example9" class="form-control form-control-lg"
-                                            required />
+                                        <input type="password" id="form3Example9_cf"
+                                            class="form-control form-control-lg" required />
                                         <label class="form-label" for="form3Example9">Confirm Password</label>
                                     </div>
+
 
                                     <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
 
@@ -82,7 +85,8 @@
                                     </div>
                                     <div class="d-flex justify-content-end pt-3">
                                         <button type="reset" class="btn btn-light btn-lg mx-3">Reset all</button>
-                                        <button type="submit" class="btn btn-warning btn-lg ms-2">Submit
+                                        <button type="submit" class="btn btn-warning btn-lg ms-2"
+                                            onmouseover="checkIt()">Submit
                                             form</button>
                                     </div>
                                 </form>

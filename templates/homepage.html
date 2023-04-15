@@ -1,7 +1,6 @@
 {%extends "index.html"%}
 {%block content%}
 
-
 {% if status == true and count==1 %}
 <div class="alert alert-success alert-dismissible">
   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -10,9 +9,11 @@
 {% endif %}
 {% if status == false%}
 <div class="alert alert-warning">
-  <strong>Login Required!</strong> You should <a href="/login" class="alert-link">login</a> to use our Services...
+  <strong>Login Required!</strong> Please <a href="/login" class="alert-link">login</a> to continue using our
+  Services...
 </div>
 {% endif %}
+
 
 
 <div class="view opacity-50" style="
@@ -32,6 +33,44 @@
     <footer class="blockquote-footer">Team Hacking Paradox</footer>
   </blockquote>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- <legend id="modules" class="my-3 mx-3" style="padding: 10px">Modules</legend> -->
 <h1 class="my-3 mx-3 text-xl" id="modules">Modules</h1>
 <!-- <div class="row">
@@ -154,6 +193,9 @@
 
 
 <!-- ********************************************************** -->
+
+{% if status == true %}
+
 <section class="text-gray-600 body-font">
   <div class="container px-5 py- mx-auto">
     <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
@@ -241,19 +283,19 @@
         <h2 class="text-xl font-medium title-font text-slate-950 mt-5">Skin Cancer or Skin Disease Prediction</h2>
         <p class="text-base leading-relaxed mt-2 text-slate-950">Skin Disease Prediction using image of Skin <br>
           With supporting text below as a natural lead-in to additional content.</p>
-        {% if status == true %}
+        <!-- {% if status == true %} -->
         <a href="/Skin_Cancer" class="text-Slate-50 inline-flex items-center mt-3 btn btn-outline-dark">Check Out
           <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             class="w-4 h-4 ml-2" viewBox="0 0 24 24">
             <path d="M5 12h14M12 5l7 7-7 7"></path>
           </svg>
-          {% else %}
+          <!-- {% else %} -->
           <a href="/login" class="text-Slate-50 inline-flex items-center mt-3 btn btn-outline-dark">Check Out
             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               class="w-4 h-4 ml-2" viewBox="0 0 24 24">
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
-            {% endif %}
+            <!-- {% endif %} -->
           </a>
       </div>
       <div class="p-4 md:w-1/3 sm:mb-0 mb-6 hover-shadow">
@@ -276,6 +318,145 @@
     </div>
   </div>
 </section>
+
+
+
+{%else%}
+
+
+
+
+
+
+
+
+
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py- mx-auto">
+    <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+      <div class="p-4 md:w-1/3 sm:mb-0 mb-6 hover-shadow transcls">
+        <div class="rounded-lg h-64 overflow-hidden">
+          <img alt="content" class="object-cover object-center h-full w-full"
+            src="{{url_for('static', filename='mod1.webp')}}">
+        </div>
+        <h2 class="text-xl font-medium title-font text-slate-950 mt-5">COVID-19 Prediction</h2>
+        <p class="text-base leading-relaxed mt-2 text-slate-950">Covid-19 Detection using Chest X-Ray <br>
+          This is the Section that helps you to predict possibility of having Covid-19 Virus with the help of pretrained
+          Model</p>
+        <a href="/Covid_19" class="text-Slate-50 inline-flex items-center mt-3 btn btn-outline-dark" id="idbut">Check Out
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+      <div class="p-4 md:w-1/3 sm:mb-0 mb-6 hover-shadow bg-image2" title="Login Please">
+        <div class="rounded-lg h-64 overflow-hidden">
+          <img alt="content" class="object-cover object-center h-full w-full"
+            src="{{url_for('static', filename='mod2.webp')}}">
+        </div>
+        <h2 class="text-xl font-medium title-font text-slate-950 mt-5">Diabetes Prediction</h2>
+        <p class="text-base leading-relaxed mt-2 text-slate-950">Diabetes Prediction using Machine Learning <br>
+          This is the section Where you can know are you diabetes patient or not.</p>
+        <a href="/login" class="text-Slate-50 inline-flex items-center mt-3 btn btn-outline-dark">Check
+          Out
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+      <div class="p-4 md:w-1/3 sm:mb-0 mb-6 hover-shadow bg-image2" title="Login Please">
+        <div class="rounded-lg h-64 overflow-hidden">
+          <img alt="content" class="object-cover object-center h-full w-full"
+            src="{{url_for('static', filename='mod3.webp')}}">
+        </div>
+        <h2 class="text-xl font-medium title-font text-slate-950 mt-5">Heart Health Prediction</h2>
+        <p class="text-base leading-relaxed mt-2 text-slate-950">Heart Disease Prediction using Machine Learning <br>
+          This is the section Whereyou can predict your condition of heart, whether it's serious or you don't have to
+          worry about it.</p>
+        <a href="/login"
+          class="text-Slate-50 inline-flex items-center mt-3 btn btn-outline-dark">Check Out
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<br>
+
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-18 mx-auto">
+    <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+      <div class="p-4 md:w-1/3 sm:mb-0 mb-6 hover-shadow bg-image2" title="Login Please">
+        <div class="rounded-lg h-64 overflow-hidden">
+          <img alt="content" class="object-cover object-center h-full w-full"
+            src="{{url_for('static', filename='mod4.webp')}}">
+        </div>
+        <h2 class="text-xl font-medium title-font text-slate-950 mt-5">Brain Tumor Prediction</h2>
+        <p class="text-base leading-relaxed mt-2 text-slate-950">Brain Tumor Detection using Brain MRI <br>
+          Sometimes it's hard for even Doctors also to Spot a Brain Tumor using just MRI of your Brain. So this section
+          will help them to have more precise decision. </p>
+        <a href="/login" class="text-Slate-50 inline-flex items-center mt-3 btn btn-outline-dark">Check
+          Out
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+      <div class="p-4 md:w-1/3 sm:mb-0 mb-6 hover-shadow bg-image2" title="Login Please">
+        <div class="rounded-lg h-64 overflow-hidden">
+          <img alt="content" class="object-cover object-center h-full w-full"
+            src="{{url_for('static', filename='mod5.webp')}}">
+        </div>
+        <h2 class="text-xl font-medium title-font text-slate-950 mt-5">Skin Cancer or Skin Disease Prediction</h2>
+        <p class="text-base leading-relaxed mt-2 text-slate-950">Skin Disease Prediction using image of Skin <br>
+          With supporting text below as a natural lead-in to additional content.</p>
+        <!-- {% if status == true %} -->
+        <a href="/login" class="text-Slate-50 inline-flex items-center mt-3 btn btn-outline-dark">Check Out
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+          <!-- {% else %} -->
+          <a href="/login" class="text-Slate-50 inline-flex items-center mt-3 btn btn-outline-dark">Check Out
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+            <!-- {% endif %} -->
+          </a>
+      </div>
+      <div class="p-4 md:w-1/3 sm:mb-0 mb-6 hover-shadow bg-image2" title="Login Please">
+        <div class="rounded-lg h-64 overflow-hidden">
+          <img alt="content" class="object-cover object-center h-full w-full"
+            src="{{url_for('static', filename='mod6.webp')}}">
+        </div>
+        <h2 class="text-xl font-medium title-font text-slate-950 mt-5">Bone Fracture Detection</h2>
+        <p class="text-base leading-relaxed mt-2 text-slate-950">Bone Fracture Detection using Bone X-Ray <br>
+          Sometimes Doctors fail to spot a minute Fracture whereas this model will help to detect any fractures in the
+          Patient's X-Ray.</p>
+        <a href="/login"
+          class="text-Slate-50 inline-flex items-center mt-3 btn btn-outline-dark">Check Out
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endif %}
+
 <br>
 <br>
 <br>
@@ -283,8 +464,8 @@
   <p class="mb-0">We will make Human Beings have a Better Life!</p>
   <footer class="blockquote-footer">Team Hacking Paradox</footer>
 </blockquote>
-{%endblock%}
 
+{%endblock%}
 
 
 {%block content2%}
@@ -294,23 +475,17 @@
 <a href="javascript:void(0);" class="btn-user dropdown-toggle media align-items-center" data-toggle="dropdown"
   data-sidebar="true" aria-expanded="false">
   <img class="mr-2" src="/static/profile.png" style="width:40px; height:40px;" alt="avatar">
-  {{ username }}
+  <span id="tobedis">{{ username }}</span>
 </a>
 <ul class="dropdown-menu dropdown-menu-right" role="menu">
   <a class="dropdown-item" href="/logout">Logout</a>
 </ul>
 {% else %}
-<a class="nav-link text-muted mx-3 slide" href="/login">
+<a class="nav-link text-muted slide" href="/login">
   Login
-</a> 
-  {% endif %}
+</a>
+{% endif %}
 
 {%endblock%}
 
 
-
-{%block content1%}
-<!-- <li class="nav-item"> -->
-  <a class="nav-link text-muted" href="#foot">About Us</a>
-<!-- </li> -->
-{%endblock%}
