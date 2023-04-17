@@ -3,8 +3,8 @@
 {%block content%}
 
 <h1 class="display-3 mx-3">Skin Disease Detection  <h2>(Accuracy : %)</h1>
-<div class="bg-image hover-overlay ripple my-3 mx-3" style="display:flex;align-items:center;justify-content:center;">
-  <img src="static\skin1.jpg" class="img w-50 " style="border-radius:50px;" />
+<div class="bg-image hover-overlay ripple my-3 mx-3"  id="skin_section" style="display:flex;align-items:center;justify-content:center;">
+  <img src="static\skin1.jpg" class="img w-50 " id="skin" style="border-radius:50px;" />
   <blockquote class="blockquote text-left my-3 mx-3">
     <center>
       <footer style="color: red;">Skin Disease </footer>
@@ -27,7 +27,7 @@
   <form action="{{url_for('getskin')}}" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label for="exampleFormControlFile1">Upload Skin Image </label>
-      <input type="file" class="form-control-file mx-3" id="exampleFormControlFile1" name="skin">
+      <input type="file" class="form-control-file mx-3" id="exampleFormControlFile1" name="skin" required>
     </div>
     <center><button type="submit" class="btn btn-outline-dark">Predict</button></center>
 

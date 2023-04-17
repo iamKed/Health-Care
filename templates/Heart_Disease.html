@@ -1,9 +1,9 @@
 {%extends "index.html" %}
 {%block content%}
 <h1 class="display-3 mx-3">Heart Disease Detection <h2 class="mx-3">(Accuracy : 94%)</h1>
-<div class="container my-3 ">
+<div class="container my-3 " id="heart_section">
   <legend>Predict Your Heart Condition Right Now</legend>
-  <form style="border:2px solid rgb(177, 194, 186);padding:22px;border-radius:25px" method="post"
+  <form style="padding:25px;"method="post"
     action="{{url_for('getValue')}}">
     <div class="form">
       <p>Please Enter the Following Details</p>
@@ -12,7 +12,7 @@
       <input type="mail" id="mail" class="form-control" name="mail">
 
       <label for="age">Age : </label>
-      <input type="number" id="age" class="form-control" name="age">
+      <input type="number" id="age" class="form-control" name="age" required>
 
       <div class="input-group mb-3 my-3">
         <div class="input-group-append">
@@ -39,10 +39,10 @@
       </div>
 
       <label for="bp">Resting Blood Pressure (in mm Hg)</label>
-      <input type="number" id="bp" class="form-control" name="bloodpressure">
+      <input type="number" id="bp" class="form-control" name="bloodpressure" required>
 
       <label for="sc">Serum Cholestrol</label>
-      <input type="number" id="sc" class="form-control" name="serum">
+      <input type="number" id="sc" class="form-control" name="serum" required>
 
       <div class="input-group mb-3 my-3">
         <div class="input-group-append">
@@ -70,7 +70,7 @@
         </select>
       </div>
       <label for="hrate">Maximum Heart Rate Achieved</label>
-      <input type="number" id="hrate" class="form-control" name="hrate" itemid="hrate">
+      <input type="number" id="hrate" class="form-control" name="hrate" itemid="hrate" required>
 
 
 
@@ -86,7 +86,7 @@
       </div>
 
       <label for="oldpeak"> ST depression induced by exercise relative to rest (oldpeak) : </label>
-      <input type="number" step="0.01" id="oldpeak" class="form-control" name="oldpeak" itemid="oldpeak">
+      <input type="number" step="0.01" id="oldpeak" class="form-control" name="oldpeak" itemid="oldpeak" required>
 
       <div class="input-group mb-3 my-3">
         <div class="input-group-append">

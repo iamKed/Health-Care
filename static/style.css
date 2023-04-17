@@ -43,5 +43,14 @@
 @media only screen and (max-width: 600px) {
     #tobedis{
         display: none;
+
+    }
+    #covid_19,#bone,#tumor,#skin{
+      display:none;
+    }
+    #covid_section,#bone_section,#tumor_section,#skin_section,#diabetes_section{
+      width: 100%;
+    }
+    .form {
     }
   }

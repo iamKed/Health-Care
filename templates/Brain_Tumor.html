@@ -4,9 +4,9 @@
 
 <h1 class="display-3 mx-3">Brain Tumor Detection <h2 class="mx-3">(Accuracy : 92%)</h2></h1>
 
-<div class="bg-image hover-overlay ripple my-3 mx-3" style="display:flex;align-items:center;justify-content:center;">
+<div class="bg-image hover-overlay ripple my-3 mx-3"  id="tumor_section" style="display:flex;align-items:center;justify-content:center;">
 
-  <img src="static\MRI.jpg" class="img w-50 " style="border-radius:50px;" />
+  <img src="static\MRI.jpg" class="img w-50 " id="tumor" style="border-radius:50px;" />
   <blockquote class="blockquote text-left my-3 mx-3">
     <center>
       <footer style="color: red;">Brain Tumor 🧠</footer>
@@ -33,7 +33,7 @@
   <form action="{{url_for('getmri')}}" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label for="exampleFormControlFile1">Upload Brain Tumor MRI </label>
-      <input type="file" class="form-control-file mx-3" id="exampleFormControlFile1" name="mri">
+      <input type="file" class="form-control-file mx-3" id="exampleFormControlFile1" name="mri" required>
     </div>
     <center><button type="submit" class="btn btn-outline-dark">Predict</button></center>
   </form>

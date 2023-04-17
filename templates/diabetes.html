@@ -1,7 +1,7 @@
 {%extends "index.html" %}
 {%block content%}
 <h1 class="display-3 mx-3">Diabetes Detection <h2 class="mx-3">(Accuracy : #%)</h1>
-<div class="container my-3 mx-3" style="border:2px solid rgb(177, 194, 186);border-radius:25px">
+<div class="container my-3 mx-3" id="diabetes_section" >
   <legend>Predict whether you have diabetes or not! Right Now</legend>
   <form method="post" action="{{url_for('diabetes')}}">
     <div class="form">
