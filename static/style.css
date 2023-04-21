@@ -42,22 +42,30 @@
   #tobedis {
     display: none;
   }
-  .dat{
+
+  .dat {
     display: none;
   }
-  .start{
+
+  
+  .start {
     margin-top: 70px;
   }
-  
-  .text{
+
+  #strong_head {
+    text-align: start;
+  }
+
+  .text {
     margin-bottom: 20px;
   }
-    .dtin {
-      position: absolute;
-      font-size: 25px;
-      padding-top: 50px;
-      text-align:start;
-    
+
+  .dtin {
+    position: absolute;
+    font-size: 25px;
+    padding-top: 50px;
+    text-align: start;
+
   }
 
   #covid_19,
@@ -155,6 +163,7 @@
   font-size: 3rem;
   margin-top: 20px;
   margin-left: 20px;
+  width: 100px;
 }
 
 .ic::before {
@@ -189,44 +198,36 @@
   padding: 0 20px;
 }
 
-.line-1{
+
+.line-2 {
   position: relative;
-  top: 50%;  
-  width: 24em;
-  margin: 0 auto;
-  border-right: 2px solid rgba(255,255,255,.75);
+  margin-left: 8px;
+  padding: 5px;
+  /* left: 10px; */
+  text-align: left;
   font-size: 180%;
-  text-align: center;
-  white-space: nowrap;
+  white-space:nowrap;
   overflow: hidden;
-  transform: translateY(-50%);    
-}
-.line-2{
-  position: relative;
-  top: 50%;  
-  width: 24em;
-  margin: 0 auto;
-  border-right: 2px solid rgba(255,255,255,.75);
-  font-size: 180%;
-  white-space: nowrap;
-  overflow: hidden;
-  transform: translateY(-50%);    
 }
 
 
 /* Animation */
-.anim-typewriter{
-animation: typewriter 4s steps(44) 1s 1 normal both,
-           blinkTextCursor 500ms steps(44) infinite normal;
+.anim-typewriter {
+  animation: typewriter 2s steps(44) 1s 1 normal both,
+  500ms steps(44) infinite normal;
 }
-@keyframes typewriter{
-from{width: 0;}
-to{width: 12em;}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 12em;
+  }
 }
-@keyframes blinkTextCursor{
-from{border-right-color: rgba(255,255,255,.75);}
-to{border-right-color: transparent;}
-}
+
+
 /* 
 @keyframes glow {
   0% {
