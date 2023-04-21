@@ -47,7 +47,7 @@
     display: none;
   }
 
-  
+
   .start {
     margin-top: 70px;
   }
@@ -206,15 +206,71 @@
   /* left: 10px; */
   text-align: left;
   font-size: 180%;
-  white-space:nowrap;
+  white-space: nowrap;
   overflow: hidden;
+}
+
+.testbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+  padding: 3px;
+  background: transparent;
+}
+
+form {
+  width: 100%;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 2px 5px #ccc;
+}
+
+input {
+  width: auto;
+  margin-right: 15px;
+  vertical-align: middle;
+  accent-color: #000;
+  outline: #000;
+}
+
+
+.question-answer label {
+
+  justify-content: space-around;
+  padding-left: 20px;
+}
+
+.btn-block {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.h4 label,
+h4 {
+
+  background-color: #e2e0e0;
+  padding: 7px;
+}
+
+@media (max-width: 767px) {
+  h4 {
+    padding: auto;
+    justify-content: baseline;
+  }
+
+  .question-answer label {
+    justify-content: space-around;
+    padding-left: auto;
+    position: relative;
+  }
 }
 
 
 /* Animation */
 .anim-typewriter {
   animation: typewriter 2s steps(44) 1s 1 normal both,
-  500ms steps(44) infinite normal;
+    500ms steps(44) infinite normal;
 }
 
 @keyframes typewriter {
