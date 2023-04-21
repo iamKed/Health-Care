@@ -7,8 +7,31 @@
   <title>HackingParadox</title>
   <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
   <script src="{{url_for('static', filename='main.js')}}"></script>
-  <script src="" https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link crossorigin="anonymous" media="all" rel="stylesheet"
+    href="https://github.githubassets.com/assets/light-0946cdc16f15.css" />
+  <link crossorigin="anonymous" media="all" rel="stylesheet"
+    href="https://github.githubassets.com/assets/dark-3946c959759a.css" />
+  <link data-color-theme="light" crossorigin="anonymous" media="all" rel="stylesheet"
+    data-href="https://github.githubassets.com/assets/light-0946cdc16f15.css" />
+  <link data-color-theme="dark" crossorigin="anonymous" media="all" rel="stylesheet"
+    data-href="https://github.githubassets.com/assets/dark-3946c959759a.css" />
+  <link data-color-theme="dark_dimmed" crossorigin="anonymous" media="all" rel="stylesheet"
+    data-href="https://github.githubassets.com/assets/dark_dimmed-9b9a8c91acc5.css" />
+  <link data-color-theme="dark_high_contrast" crossorigin="anonymous" media="all" rel="stylesheet"
+    data-href="https://github.githubassets.com/assets/dark_high_contrast-11302a585e33.css" />
+  <link data-color-theme="dark_colorblind" crossorigin="anonymous" media="all" rel="stylesheet"
+    data-href="https://github.githubassets.com/assets/dark_colorblind-1a4564ab0fbf.css" />
+  <link data-color-theme="light_colorblind" crossorigin="anonymous" media="all" rel="stylesheet"
+    data-href="https://github.githubassets.com/assets/light_colorblind-12a8b2aa9101.css" />
+  <link data-color-theme="light_high_contrast" crossorigin="anonymous" media="all" rel="stylesheet"
+    data-href="https://github.githubassets.com/assets/light_high_contrast-5924a648f3e7.css" />
+  <link data-color-theme="light_tritanopia" crossorigin="anonymous" media="all" rel="stylesheet"
+    data-href="https://github.githubassets.com/assets/light_tritanopia-05358496cb79.css" />
+  <link data-color-theme="dark_tritanopia" crossorigin="anonymous" media="all" rel="stylesheet"
+    data-href="https://github.githubassets.com/assets/dark_tritanopia-aad6b801a158.css" />
   <link rel="icon" type="image/png" href="static/Logo.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -29,12 +52,12 @@
 </head>
 
 <body style="background-image: url(/static/19366.jpg);">
-  <nav class="w-full flex relative justify-between items-center mx-auto px-4 h-20" >
+  <nav class="w-full flex relative justify-between items-center mx-auto px-4 h-20">
     <div class="inline-flex">
       <a class="navbar-brand" href="/"><span style="color: #2b7e33;">Hacking</span><span
           style="color: #000000;">Paradox</span>
       </a>
-        <a class="nav-link text-muted mx-3" href="/#modules" id="tobedis">Modules</a>
+      <a class="nav-link text-muted mx-3" href="/#modules" id="tobedis">Modules</a>
     </div>
 
     <div class="flex-initial">
@@ -43,8 +66,8 @@
         <div class="block">
           <div class="inline relative">
             {%block content2%}
-              {%endblock%}
-              
+            {%endblock%}
+
           </div>
         </div>
       </div>

@@ -263,4 +263,4 @@ def getValue():
         return render_template ('answer.html',res=answer)
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run(debug=True,port=2000)

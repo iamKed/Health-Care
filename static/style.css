@@ -1,56 +1,249 @@
-.bg-image2{
+.bg-image2 {
 
-    /* Add the blur effect */
-    filter: blur(8px);
-    -webkit-filter: blur(4px);
-    /* content: attr(custom-tooltip); */
-    /* background-image: url("lock.jpg"); */
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(4px);
+  /* content: attr(custom-tooltip); */
+  /* background-image: url("lock.jpg"); */
 
-    /* Full height */
-    /* height: 10%;
+  /* Full height */
+  /* height: 10%;
     width: 10%; */
 
-    transition: .1s ease;
-    opacity:1;
+  transition: .1s ease;
+  opacity: 1;
   /* Center and scale the image nicely */
 }
 
 .bg-image2:hover {
+  transform: scale(1.02);
 
-
-    transform: scale(1.02);
-
- /* position: relative; */
 }
 
 
-.bg-image2 #idbut{
-    /* transform-style: flat; */
-    filter: blur(0px);
+.bg-image2 #idbut {
+  /* transform-style: flat; */
+  filter: blur(0px);
 }
 
 
-.covsec{
-  background-image: linear-gradient(rgba(4,9,30,0.6),rgba(4,9,30,0.5)), url(covid2.jpg);
+.covsec {
+  background-image: linear-gradient(rgba(4, 9, 30, 0.6), rgba(4, 9, 30, 0.5)), url(covid2.jpg);
   background-position: center;
   background-size: cover;
   /* min-height: 100vh; */
 }
 
-.transcls :hover{
-  transform: scale(1.02);
+.transcls :hover {
+  transform: scale(1.02);
 }
-@media only screen and (max-width: 600px) {
-    #tobedis{
-        display: none;
 
-    }
-    #covid_19,#bone,#tumor,#skin{
-      display:none;
-    }
-    #covid_section,#bone_section,#tumor_section,#skin_section,#diabetes_section{
-      width: 100%;
-    }
-    .form {
-    }
+@media only screen and (max-width: 600px) {
+  #tobedis {
+    display: none;
   }
+  .dat{
+    display: none;
+  }
+  .start{
+    margin-top: 70px;
+  }
+  
+  .text{
+    margin-bottom: 20px;
+  }
+    .dtin {
+      position: absolute;
+      font-size: 25px;
+      padding-top: 50px;
+      text-align:start;
+    
+  }
+
+  #covid_19,
+  #bone,
+  #tumor,
+  #skin {
+    display: none;
+  }
+
+  #covid_section,
+  #bone_section,
+  #tumor_section,
+  #skin_section,
+  #diabetes_section {
+    width: 100%;
+  }
+
+}
+
+
+.text {
+  position: relative;
+  font-family: sans-serif;
+}
+
+#sp {
+  margin-right: 1rem;
+}
+
+
+
+
+
+.up {
+  margin-top: 70px;
+
+}
+
+.vl {
+  height: 250px;
+  width: 3.7px;
+  margin-left: 27px;
+  background: linear-gradient(#d2a8ff, #a371f7 10%, #196c2e 70%, #2ea043 80%, #56d364);
+
+}
+
+#ml {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  margin-left: 1%;
+  /* border-radius: 50%; */
+}
+
+.dtin {
+  font-size: 25px;
+  left: 5%;
+
+}
+
+.dtin1 {
+  font-size: 25px;
+  left: 6%;
+}
+
+#ml1 {
+  width: 32px;
+  height: 32px;
+  margin-top: 1%;
+  margin-right: 10px;
+  margin-left: 1%;
+  /* filter: hue-rotate(90deg); */
+
+  /* border-radius: 50%; */
+}
+
+.vl1 {
+  top: 500px;
+  height: 100px;
+  width: 3.7px;
+  margin-left: 27px;
+  margin-top: 1%;
+  background: linear-gradient(#56d364, #2ea043, var(--color-canvas-default));
+  transition-delay: 500ms;
+}
+
+.ic {
+  display: flex;
+  position: relative;
+}
+
+#strong_head {
+  padding-top: 20px;
+  font-size: 3rem;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.ic::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: scale(0);
+  opacity: 0;
+  animation: glow 1.5s ease-out infinite;
+}
+
+.im img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#curve {
+  width: 40rem;
+  height: 600px;
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.line-1{
+  position: relative;
+  top: 50%;  
+  width: 24em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255,255,255,.75);
+  font-size: 180%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);    
+}
+.line-2{
+  position: relative;
+  top: 50%;  
+  width: 24em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255,255,255,.75);
+  font-size: 180%;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);    
+}
+
+
+/* Animation */
+.anim-typewriter{
+animation: typewriter 4s steps(44) 1s 1 normal both,
+           blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+from{width: 0;}
+to{width: 12em;}
+}
+@keyframes blinkTextCursor{
+from{border-right-color: rgba(255,255,255,.75);}
+to{border-right-color: transparent;}
+}
+/* 
+@keyframes glow {
+  0% {
+    transform: scale(0);
+    opacity: 0.7;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 0.2;
+    box-shadow: 0 0 40px 20px rgba(255, 255, 255, 0);
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 0.7;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+} */
