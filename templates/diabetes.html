@@ -222,6 +222,211 @@
   <hr>
 </div>
 <!-- ------------------------------------------------- -->
+<!-- <div class="testbox container list-group list-group-numbered" id="diabetes">
+  <form method="post" action="{{url_for('diabetes')}}">
+    <h3>Diabetes Prediction Enter the Following Details</h3>
+    <hr>
+    <h4 for="mail">Mail-Id : </h4>
+    <input type="mail" id="mail" class="form-control" name="mail" required>
+
+    <br>
+    <div>
+      <h4>
+       1. Pressure Category :
+      </h4>
+      <div class="question-answer" >
+        <label><input type="radio" value="1" name="hlbp" required/>High BP</label>
+        <label><input type="radio" value="0" name="hlbp" required/>Low BP</label>
+      </div>
+    </div>
+
+    <br>
+    <div>
+      <h4>
+       2. Cholestrol Category :
+      </h4>
+      <div class="question-answer">
+        <label><input type="radio" value="1" name="chol" required />High Cholestrol</label>
+        <label><input type="radio" value="0" name="chol" required />Low Cholestrol</label>
+      </div>
+    </div>
+
+    <br>
+
+    <div>
+      <h4>3. Have You Checked Your Cholestrol In Last 5 Years : </h4>
+      <div class="question-answer">
+        <label><input type="radio" value="1" name="chol2" required />Yes</label>
+        <label><input type="radio" value="0" name="chol2" required />No</label>
+      </div>
+    </div>
+
+    <br>
+
+    <h4>4. BMI : </h4>
+    <input type="number" id="bp" class="form-control" name="bmi" required>
+
+    <br>
+
+    <div>
+      <h4>5. Have You Smoked At Least 5 Packets : </h4>
+      <div class="question-answer">
+        <label><input type="radio" value="1" name="smoker" />Yes</label>
+        <label><input type="radio" value="0" name="smoker" />No</label>
+      </div>
+    </div>
+
+    <br>
+
+    <div>
+      <h4>6. Did You Have Stroke Ever :</h4>
+      <div class="question-answer">
+        <label><input type="radio" value="1" name="stroke" />Yes</label>
+        <label><input type="radio" value="0" name="stroke" />No</label>
+
+      </div>
+    </div>
+
+    <br>
+
+    <div>
+      <h4>7. Heart Disease Type (Coronary Heart Disease Or Myocardial Infarction) : </h4>
+      <div class="question-answer">
+        <label><input type="radio" value="1" name="cdmi" />Yes</label>
+        <label><input type="radio" value="0" name="cdmi" />No</label>
+      </div>
+    </div>
+
+    <br>
+
+    <div>
+      <h4>8. Do You Exercise (Physical Activity Since Last 30 Days) :</h4>
+      <div class="question-answer">
+        <label><input type="radio" value="1" name="phyacti" />Yes</label>
+        <label><input type="radio" value="0" name="phyacti" />No</label>
+      </div>
+    </div>
+
+
+    <br>
+    <div>
+      <h4>9. Do You Consume Fruits 1 Or More Times Per Day : </h4>
+      <div class="question-answer">
+        <label><input type="radio" value="1" name="fruit" />Yes</label>
+        <label><input type="radio" value="0" name="fruit" />No</label>
+      </div>
+    </div>
+
+    <br>
+
+    <div>
+      <h4>10. Do You Consume Veggies 1 Or More Times Per Day : </h4>
+      <div class="question-answer">
+        <label><input type="radio" value="1" name="veg" />Yes</label>
+        <label><input type="radio" value="0" name="veg" />No</label>
+      </div>
+    </div>
+
+
+    <br>
+    <div>
+      <h4>11. Do You Drink More Than 7 Times Per Week : </h4>
+      <div class="question-answer">
+        <label><input type="radio" value="1" name="drink" />Yes</label>
+        <label><input type="radio" value="0" name="drink" />No</label>
+      </div>
+    </div>
+
+    <br>
+
+    <div>
+      <h4>12. Do You Have Any Kind Of Health Care Coverage : </h4>
+      <div class="question-answer">
+        <label><input type="radio" value="1" name="healcov" />Yes</label>
+        <label><input type="radio" value="0" name="healcov" />No</label>
+      </div>
+    </div>
+
+    <br>
+    <div>
+      <h4>13. Was there a time in the past 12 months when you needed to see a doctor but could not because of cost? :
+      </h4>
+      <div class="question-answer">
+        <label><input type="radio" value="1" name="cost" />Yes</label>
+        <label><input type="radio" value="0" name="cost" />No</label>
+      </div>
+    </div>
+
+    <br>
+    <div>
+      <h4>14. Would you say that in general your health is : </h4>
+      <div class="question-answer">
+        <label><input type="radio" value="1" name="genhealth" />Excellent</label>
+        <label><input type="radio" value="2" name="genhealth" />Very Good</label>
+        <label><input type="radio" value="3" name="genhealth" />Good</label>
+        <label><input type="radio" value="4" name="genhealth" />Fair</label>
+        <label><input type="radio" value="5" name="genhealth" />Poor</label>
+      </div>
+    </div>
+
+
+    <br>
+
+    <h4 for="oldpeak" class="h4">15. Mental Health (0-30) : </h4>
+    <input type="number" step="0.01" id="oldpeak" class="form-control" name="mh" itemid="oldpeak">
+
+
+    <br>
+    <h4 for="oldpeak" class="h4">16. Physical Health (0-30) : </h4>
+    <input type="number" step="0.01" id="oldpeak" class="form-control" name="ph" itemid="oldpeak">
+
+
+    <br>
+    <div>
+      <h4>17. Do You Have Serious Difficulty for Walking Or
+        Climbing Stairs :</h4>
+      <div class="question-answer">
+        <label><input type="radio" value="1" name="walk" />Yes</label>
+        <label><input type="radio" value="0" name="walk" />No</label>
+      </div>
+    </div>
+    <br>
+
+
+    <div>
+      <h4>18. Gender : </h4>
+      <div class="question-answer">
+        <label><input type="radio" value="1" name="gen" />Male</label>
+        <label><input type="radio" value="0" name="gen" />Female</label>
+
+      </div>
+    </div>
+
+    <br>
+    <h4 for="oldpeak" class="h4">19. Age : </h4>
+    <input type="number" step="0.01" id="oldpeak" class="form-control" name="age" itemid="oldpeak">
+
+    <br>
+    <h4 for="oldpeak" class="h4">20. Education: (Scale 1-6) </h4>
+    <input type="number" step="0.01" id="oldpeak" class="form-control" name="education" itemid="oldpeak">
+
+    <br>
+
+    <h4 for="oldpeak" class="h4">21. Income : </h4>
+    <input type="number" step="0.01" id="oldpeak" class="form-control" name="income" itemid="oldpeak">
+
+
+    <br>
+
+    <div class="btn-block">
+      <button type="submit" class="btn btn-outline-dark" name="submit">Predict</button>
+    </div>
+  </form>
+</div> -->
+
+
+<!-- ------------------------------------------------- -->
+
 
 {%endblock%}
 

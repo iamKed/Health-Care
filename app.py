@@ -102,7 +102,7 @@ def logout_user():
 
 @app.route('/')
 def refresh():
-    print("Ked",app.config['USERNAME'],app.config['USERNAME'])
+    print(app.config['USERNAME'],app.config['USERNAME'])
     if app.config['LOGIN_STATUS']==True:
         app.config['LOGIN_COUNT']=app.config['LOGIN_COUNT']+1
     return render_template("homepage.html",status=app.config['LOGIN_STATUS'],username=app.config['USERNAME'],count=app.config['LOGIN_COUNT'])
@@ -133,8 +133,9 @@ def Covid_19():
 
 @app.route('/Heart_Disease_Prediction')
 def Heart_Disease_Prediction():
-    return render_template("Heart_Disease.html",status=app.config['LOGIN_STATUS'],username=app.config['USERNAME'])
-
+    if app.config['LOGIN_STATUS']:
+        return render_template('Heart_Disease.html',status=app.config['LOGIN_STATUS'],username=app.config['USERNAME'])
+    return redirect('/login')
 @app.route('/diabetes',methods=['GET','POST'])
 def diabetes():
     if request.method=='POST':
@@ -149,19 +150,25 @@ def diabetes():
         else:
             answer="Diabetic"
         return render_template('answer.html',res=answer)
-    return render_template('diabetes.html',status=app.config['LOGIN_STATUS'],username=app.config['USERNAME'])
+    if app.config['LOGIN_STATUS']:
+        return render_template('diabetes.html',status=app.config['LOGIN_STATUS'],username=app.config['USERNAME'])
+    return redirect('/login')
 @app.route('/Bone_Fracture_Detection')
 def Bone_Fracture_Detection():
-    return render_template("Bone_Fracture.html",status=app.config['LOGIN_STATUS'],username=app.config['USERNAME'])
+    if app.config['LOGIN_STATUS']:
+        return render_template('Bone_Fracture.html',status=app.config['LOGIN_STATUS'],username=app.config['USERNAME'])
+    return redirect('/login')
 
 @app.route('/Skin_Cancer')
 def Skin_Cancer():
-    return render_template('Skin_Cancer.html',status=app.config['LOGIN_STATUS'],username=app.config['USERNAME'])
-
+    if app.config['LOGIN_STATUS']:
+        return render_template('Skin_Cancer.html',status=app.config['LOGIN_STATUS'],username=app.config['USERNAME'])
+    return redirect('/login')
 @app.route('/Brain_Tumor_Detection')
 def Brain_Tumor_Detection():
-    return render_template("Brain_Tumor.html",status=app.config['LOGIN_STATUS'],username=app.config['USERNAME'])
-
+    if app.config['LOGIN_STATUS']:
+        return render_template('Brain_Tumor.html',status=app.config['LOGIN_STATUS'],username=app.config['USERNAME'])
+    return redirect('/login')
 @app.route('/getmri',methods=['POST'])
 #prediction code for brain tumor detection
 def getmri():

@@ -1,8 +1,9 @@
 {%extends 'index.html'%}
 
 {%block content%}
-<h1 class="display-3 mx-3">Bone Fracture Detection <h2 class="mx-3">(Accuracy : #%)</h1>
-<div class="bg-image hover-overlay ripple my-3 mx-3" id="bone_section" style="display:flex;align-items:center;justify-content:center;">
+<h1 class="display-3 mx-3">Bone Fracture Detection <h2 class="mx-3">(Accuracy : 94%)</h1>
+<div class="bg-image hover-overlay ripple my-3 mx-3" id="bone_section"
+  style="display:flex;align-items:center;justify-content:center;">
 
 
   <img src="static\bone1.jpg" class="img w-50 " id="bone" style="border-radius:50px;" />
@@ -10,32 +11,19 @@
     <center>
       <footer style="color: red;">Bone Fracture 🦴</footer>
     </center>
-    <p>COVID-19 is a highly contagious respiratory illness caused by the SARS-CoV-2 virus. It was first
-      identified in Wuhan, China in December 2019 and has since become a global pandemic.</p><br>
+    <p>Minor bone fractures can be difficult to detect, and may go unnoticed or be misdiagnosed as a sprain or strain. <br>
+      This is because the symptoms of minor fractures can be similar to those of soft tissue injuries, such as pain,
+      swelling, and limited mobility. <br>
+    However, if left untreated, minor fractures can lead to more serious complications, such as chronic pain or
+      disability.
     <p>
-      Symptoms of COVID-19 can range from mild to severe, and include fever, cough, shortness of breath, fatigue, body
-      aches, and loss of taste or smell. Some people may experience no symptoms at all.
 
     </p>
     <br>
-    <ul>
 
-      <li><a href="https://www.mygov.in/covid-19/" style="display: flex;"> Countries with the most cases:</a>
-        <p style="display: flex;">
-          United States, India, Brazil, Russia, France, Turkey, the United Kingdom, Italy, Argentina, and Colombia
-        </p>
-
-
-
-        <p class="mb-0">
-      <li><a href="https://www.mygov.in/covid-19/" style="display: flex;"> Countries with the most deaths:</a></li>
-      United States, Brazil, India, Mexico, Peru, Russia, the United Kingdom, Italy, Colombia, and Argentina
-
-
-      </p>
-      <footer class="blockquote-footer">Team Hacking Paradox </footer>
+    </p>
+    <footer class="blockquote-footer">Team Hacking Paradox </footer>
   </blockquote>
-  </ul>
 
 </div>
 
@@ -43,7 +31,7 @@
 <center>
   <form action="{{url_for('getbone')}}" method="post" enctype="multipart/form-data">
     <div class="form-group">
-      <label for="exampleFormControlFile1">Upload Bone X-Ray Image </label>
+      <legend class="mx-3 display-4">Let's Predict About You</legend>
       <input type="file" class="form-control-file mx-3" id="exampleFormControlFile1" name="bone" required>
     </div>
     <center><button type="submit" class="btn btn-outline-dark">Predict</button></center>
@@ -52,7 +40,7 @@
 
   <br>
   <hr>
-  
+
 </center>
 {%endblock%}
 
@@ -72,7 +60,7 @@
 {% else %}
 <a class="nav-link text-muted mx-3 slide" href="/login">
   Login
-</a> 
-  {% endif %}
+</a>
+{% endif %}
 
 {%endblock%}

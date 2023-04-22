@@ -1,7 +1,7 @@
 {%extends "index.html" %}
 {%block content%}
 <h1 class="display-3 mx-3">Heart Disease Detection <h2 class="mx-3">(Accuracy : 94%)</h1>
-<div class="container my-3 " id="heart_section">
+<!-- <div class="container my-3 " id="heart_section">
   <legend>Predict Your Heart Condition Right Now</legend>
   <form style="padding:25px;"method="post"
     action="{{url_for('getValue')}}">
@@ -130,7 +130,150 @@
   </form>
   <br>
   <hr>
+</div> -->
+
+<!-- ------------------------------------------------------------------- -->
+<div class="testbox container list-group list-group-numbered" id="heartform">
+  <form method="post" action="{{url_for('getValue')}}">
+    <h3>Please Enter the Following Details</h3>
+    <hr>
+    <br>
+    <h4 for="mail">Mail-Id : </h4>
+    <input type="mail" id="mail" class="form-control" name="mail" required>
+
+    <br>
+    <h4 for="oldpeak">1. Age : </h4>
+    <input type="number" step="0.01" id="oldpeak" class="form-control" name="age" itemid="oldpeak">
+    <br>
+
+    <div>
+      <h4>2. Gender : </h4>
+      <div class="question-answer">
+        <label><input type="radio" value="1" name="sex" />Male</label>
+        <label><input type="radio" value="0" name="sex" />Female</label>
+      </div>
+    </div>
+    <br>
+
+    <div>
+      <h4>
+        3. Chest-Pain Type :
+      </h4>
+      <div class="question-answer">
+        <select class="custom-select" id="inputGroupSelect02" name="chaistpain">
+          <option selected value="0">Typical Angina</option>
+          <option value="1">Atypical Angina</option>
+          <option value="2">Non-Anginal pain</option>
+          <option value="3">Asymptomatic</option>
+        </select>
+      </div>
+    </div>
+    <br>
+
+    <h4>4. Resting Blood Pressure (in mm Hg) : </h4>
+    <input type="number" id="bp" class="form-control" name="bloodpressure" required>
+    <br>
+
+    <h4>5. Serum Cholestrol : </h4>
+    <input type="number" id="bp" class="form-control" name="serum" required>
+    <br>
+
+    <div>
+      <h4>6. Fasting Blood Sugar > 120 ? : </h4>
+      <div class="question-answer">
+        <label><input type="radio" value="1" name="bloodsugar" />Yes</label>
+        <label><input type="radio" value="0" name="bloodsugar" />No</label>
+      </div>
+    </div>
+
+    <br>
+
+
+
+    <div>
+      <h4>7. Resting Electro-cardiographic Result : </h4>
+      <div class="question-answer">
+        <select class="custom-select" id="inputGroupSelect02" name="wave">
+          <option selected value="0">Normal</option>
+          <option value="1">Having ST-T wave abnormality</option>
+          <option value="2">Showing probable or definite left
+            ventricular hypertrophy</option>
+
+        </select>
+      </div>
+      <br>
+
+      <h4>8. Maximum Heart Rate Achieved : </h4>
+      <input type="number" id="bp" class="form-control" name="hrate" required>
+      <br>
+
+      <div>
+        <h4>9. Exercise Induced Anigna :</h4>
+        <div class="question-answer">
+          <label><input type="radio" value="1" name="anigna" />Yes</label>
+          <label><input type="radio" value="0" name="anigna" />No</label>
+
+        </div>
+      </div>
+
+      <br>
+      <h4>10. ST depression induced by exercise relative to rest (oldpeak) : </h4>
+      <input type="number" id="bp" step="0.01" class="form-control" name="oldpeak" required>
+      <br>
+
+      <div>
+        <h4>11. The slope of the peak exercise ST segment : </h4>
+        <div class="question-answer">
+          <select class="custom-select" id="inputGroupSelect01" name="slope">
+            <option selected value="0">0</option>
+            <option value="1">1 </option>
+            <option value="2">2 </option>
+          </select>
+        </div>
+      </div>
+
+      <br>
+
+      <div>
+        <h4>12. CA (Number of major vessels (0-3) colored by
+          flourosopy): </h4>
+          <div class="question-answer">
+            <select class="custom-select" id="inputGroupSelect01" name="ca">
+              <option selected value="0">0 </option>
+              <option value="1">1 </option>
+              <option value="2">2 </option>
+              <option value="3">3 </option>
+            </select>
+          </div>
+      </div>
+
+
+      <br>
+        <h4>13.Thalmessia (Thal) : </h4>
+        <div class="question-answer">
+          <select class="custom-select" id="inputGroupSelect01" name="thal">
+            <option selected value="0"> Normal </option>
+            <option value="1">Fixed Defect </option>
+            <option value="2"> Reversable Defect </option>
+          </select>
+        </div>
+
+      <br>
+
+
+      <div class="btn-block">
+        <button type="submit" class="btn btn-outline-dark" name="submit">Predict</button>
+      </div>
+  </form>
 </div>
+
+
+
+
+
+
+<!-- ------------------------------------------------------------------- -->
+
 
 {%endblock%}
 
