@@ -1,19 +1,44 @@
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect, session,jsonify
 from flask_sqlalchemy import SQLAlchemy
 import numpy as np
+from sqlalchemy import text
 import pickle
+import pandas as pd
 import os
+from ChatBot_Response import chatbot_response
 from keras.utils import load_img,img_to_array
 from keras.models import load_model
 from keras.preprocessing import image
 import warnings
+import sqlite3
+
+def get_hospitals(disease):
+
+    rows=pd.read_csv(r"C:\Users\asus\OneDrive\Ked data\VS Code\Python\Health-Care\static\Covid.csv")
+    hosdetail=rows[rows['Diseases']==disease]
+    # create list for Address, hospital name,link
+    raddr,rlink,rcity=list(hosdetail['Address']),list(hosdetail['Google Map Link']),list(hosdetail["City"])
+    return (raddr,rlink,rcity)
+
+# def create_connection(db_file):
+    
+#     print(db_file)
+#     conn = None
+#     try:
+#         conn = sqlite3.connect(db_file)
+#     except sqlite3.Error as e:
+#         print(e)
+
+#     return conn
+# r=create_connection(r'C:\Users\asus\OneDrive\Ked data\VS Code\Python\Health-Care\instance\database.db')
 from sklearn.preprocessing import StandardScaler
 from sqlalchemy import Engine, create_engine, select 
 warnings.filterwarnings('ignore')
 model= pickle.load(open("Trained_Models/heart.pkl",'rb'))
 model_diabetes=pickle.load(open("Trained_Models/DiabetesModel96.pkl",'rb'))
+conn=sqlite3.connect('instance\database.db')
 from gevent.pywsgi import WSGIServer 
-# engine=create_engine('sqlite:///database.db')
+engine=create_engine('sqlite:///database.db')
 from werkzeug.utils import secure_filename
 mri_model=load_model(r'Trained_Models\BrainTumor.h5')
 app=Flask(__name__)
@@ -29,6 +54,24 @@ app.config['USERNAME']=str('')
 app.config['LOGIN_COUNT']=0
 answer=''
 app.config['UPLOAD_FOLDER']=r'static/files'
+
+
+class hospital(db.Model):
+    userName = db.Column(db.String, primary_key=True,nullable=False)
+    address=db.Column(db.String, primary_key=False,nullable=False)
+    link = db.Column(db.String, primary_key=False,nullable=False)
+    city = db.Column(db.String, primary_key=False,nullable=False)
+    disease = db.Column(db.String, primary_key=False,nullable=False)
+
+@app.route("/predict",methods=['POST'])
+def predict():
+    text=request.get_json().get("message")
+    
+    res= chatbot_response(text)
+    
+    message={"answer":res}
+    return jsonify(message)
+
 class Mainn(db.Model):
     mail=db.Column(db.String, primary_key=True)
     age=db.Column(db.Integer,nullable=False)
@@ -179,7 +222,26 @@ def getmri():
         file_path = os.path.join(os.path.abspath(os.path.dirname(__file__)),app.config['UPLOAD_FOLDER'],secure_filename(img.filename))
         print(file_path)
         result=preprocess_img_mri(file_path)
-        return render_template('answer.html',res=labels[(np.where(result[0]==1))[0][0] ])
+        raddr,rlink,rcity=get_hospitals('brain')
+        return render_template('answer.html',res=labels[(np.where(result[0]==1))[0][0]],raddr=raddr,rlink=rlink,rcity=rcity)
+
+
+# def searchHos():
+
+
+def searchHos():
+    db_file=r'C:\Users\asus\OneDrive\Ked data\VS Code\Python\Health-Care\instance\database.db'
+    conn = None
+    try:
+        conn = sqlite3.connect(db_file)
+    except sqlite3.Error as e:
+        print(e)
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM Sheet1 WHERE diseases='covid'")
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
+
 
 @app.route('/getcovidresult',methods=['POST'])
 #prediction code for covid-19 module
@@ -194,12 +256,23 @@ def getcovidresult():
         predictions = (covid_19_model.predict(xtest_image)  ).astype("int32")
         print(predictions)
         predictions=predictions[0][0]
+        # if predictions==0:
+        #     predictions="Covid 19 Negative"
+        # elif predictions==1:
+        #     predictions="Covid 19 Positive"
+        # # return render_template('Covid_19/html',res=predictions)
+        # return render_template('answer.html',res=predictions)
+        raddr,rlink,rcity=get_hospitals('covid')
+        # fetching the data from the csv file
         if predictions==0:
             predictions="Covid 19 Negative"
         elif predictions==1:
             predictions="Covid 19 Positive"
+
         # return render_template('Covid_19/html',res=predictions)
-        return render_template('answer.html',res=predictions)
+        # r=create_connection('database.db')
+        # select_all_tasks(r)
+        return render_template('answer.html',res=predictions,raddr=raddr,rlink=rlink,rcity=rcity)
 
 
 
@@ -217,7 +290,9 @@ def getskin():
         disease_list = ["Eczema 1677","Melanoma","Atopic Dermantitis","Basal Cell Carcinoma (BCC)","Mealanocytic Nevi (NV)","Benign Keratosis-like Lessions (BKL)", "Psoriasis pictures lichen Planus and related diseases","Seaborrheic Keratoses and other Benign Tumors","Tinea Ringworm Candidiasis and other fungal infections","Warts Molluscum and other Viral Infections"]
         disease=disease_list[int(a[0]+1)]
         print(disease)
-    return render_template ('answer.html',res=disease)
+        raddr,rlink,rcity=get_hospitals('skin')
+    return render_template ('answer.html',res=disease,raddr=raddr,rlink=rlink,rcity=rcity)
+
 
 @app.route('/getbone',methods=['POST'])
 def getbone():
@@ -231,12 +306,15 @@ def getbone():
         predictions=bone_model.predict(xtest_image)
         predictions=np.argmax(predictions,axis=1)
         print(predictions[0])
+        raddr,rlink,rcity=get_hospitals('bone')
         if predictions[0]==0:
             predictions='Bone Fractured'
         else:
             predictions='Bone Not Fractured'
         print(predictions)
-    return render_template ('answer.html',res=predictions)
+        bone=True
+    return render_template ('answer.html',res=predictions,raddr=raddr,rlink=rlink,rcity=rcity,bone=bone)
+
 
 
 @app.route('/getValue',methods=['POST'])
@@ -263,11 +341,22 @@ def getValue():
         print("Input_Data: ",input_data)
         answer=model.predict(input_data)
         print(answer)
+        raddr,rlink,rcity=get_hospitals('heart')
         if answer:
             answer="Don't Worry You Don't Have a serious Heart Condition"
         else:
             answer="Sorry to say that you might have a serious heart Condition. Please refer to a Doctor and Get treated!"
-        return render_template ('answer.html',res=answer)
+        return render_template ('answer.html',res=answer,raddr=raddr,rlink=rlink,rcity=rcity)
 
 if __name__=="__main__":
     app.run(debug=True,port=2000)
+    # searchHos()
+    # hosp=Hospital.query.all()
+    # covid_Hospitals_list=[]
+
+    # for i in hosp:
+    #     if i.disease=='covid':
+    #         covid_Hospitals_list.append(i)
+    #         # return True
+    #         print(i.address)
+    # print(covid_Hospitals_list)

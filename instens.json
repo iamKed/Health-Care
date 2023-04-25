@@ -1,0 +1,472 @@
+{
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": [
+                "Hi there",
+                "How are you",
+                "Is anyone there?",
+                "Hey",
+                "Hola",
+                "Hello",
+                "Good day"
+            ],
+            "responses": [
+                "Hello, thanks for asking",
+                "Good to see you again",
+                "Hi there, how can I help?"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": [
+                "Bye"
+            ],
+            "responses": [
+                "See you!",
+                "Have a nice day",
+                "Bye! Come back again soon."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "Thank you",
+            "patterns": [
+                "Thanks",
+                "Thank you",
+                "That's helpful",
+                "Awesome, thanks",
+                "Thanks for helping me"
+            ],
+            "responses": [
+                "Happy to help!",
+                "Any time!",
+                "My pleasure"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "what i have to do if i tested positive?",
+            "patterns": [
+                "what i have to do if i tested positive",
+                " i tested positive"
+            ],
+            "responses": [
+                "you should self-quarantine/isolate at home pending test results and follow the advice of your health care "
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "What is your name",
+            "patterns": [
+                "What is your name?",
+                "What should I call you?",
+                "name?",
+                "What's your name"
+            ],
+            "responses": [
+                "I'm docbot",
+                "docbot",
+                "You can call me docbot"
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "Are some people more at risk than others?",
+            "patterns": [
+                "Are some people more at risk than others",
+                " people more at risk than others"
+            ],
+            "responses": [
+                "People older than 60 years and those with underlying health conditions (e.g. hypertension, diabetes, cardiovascular disease, chronic respiratory disease and immune suppression) are considered to be more at risk of developing severe symptoms. Men in these groups also appear to be at a slightly higher risk than females. "
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "infection from food products?",
+            "patterns": [
+                "What is the risk of COVID-19 infection from food products imported from affected areas",
+                "infection from food products"
+            ],
+            "responses": [
+                "There have been no reports of transmission of COVID-19 via food or their packaging, and therefore there is no evidence that food items imported into the EU in accordance with the applicable animal and public health regulations pose a risk for the health of EU citizens in relation to COVID-19. The main mode of transmission is from person to person. "
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "Where do coronaviruses come from",
+            "patterns": [
+                "Where do coronaviruses come from",
+                " coronaviruses origine?"
+            ],
+            "responses": [
+                "Coronaviruses are viruses that circulate among animals, with some infecting humans. "
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "What is a coronavirus?",
+            "patterns": [
+                "What is a coronavirus"
+            ],
+            "responses": [
+                "Coronaviruses are a large family of viruses which may cause illness in animals or humans.  In humans, several coronaviruses are known to cause respiratory infections ranging from the common cold to more severe diseases .such as Middle East Respiratory Syndrome (MERS) and Severe Acute Respiratory Syndrome (SARS). The most recently discovered coronavirus causes coronavirus disease COVID-19."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "What is COVID-19?",
+            "patterns": [
+                "What is covid 19",
+                "tell me something about covid 19"
+            ],
+            "responses": [
+                "COVID-19 is the infectious disease caused by the most recently discovered coronavirus. This new virus and disease were unknown before the outbreak began in Wuhan, China, in December 2019.",
+                "COVID-19 is a respiratory illness caused by the SARS-CoV-2 virus."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "What are the symptoms of COVID 19?",
+            "patterns": [
+                "symptoms of covid 19",
+                "symptoms of coronavirus",
+                "covid 19 symptoms",
+                "coronavirus symptoms",
+                "What are the symptoms of COVID-19"
+            ],
+            "responses": [
+                "The most common symptoms of COVID-19 are fever. tiredness,and dry cough. Some patients may have aches and pains, nasal congestion, runny nose, sore throat or diarrhea. These symptoms are usually mild and begin gradually. Some people become infected but donâ€™t develop any symptoms and don't feel unwell. Most people (about 80%) recover from the disease without needing special treatment. Around 1 out of every 6 people who gets COVID-19 becomes seriously ill and develops difficulty breathing. Older people, and those with underlying medical problems like high blood pressure, heart problems or diabetes, are more likely to develop serious illness. People with fever, cough and difficulty breathing should seek medical attention."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "How does COVID 19 spread?",
+            "patterns": [
+                "How does COVID 19 spread",
+                "How does coronavirus spread"
+            ],
+            "responses": [
+                "People can catch COVID-19 from others who have the virus. The disease can spread from person to person through small droplets from the nose. or mouth which are spread when a person with COVID-19 coughs or exhales. These droplets land on objects and surfaces around the person. Other people then catch COVID-19 by touching these objects or surfaces, then touching their eyes, nose or mouth. People can also catch COVID-19 if they breathe in droplets from a person with COVID-19 who coughs out or exhales droplets. This is why it is important to stay more than 1 meter (3 feet) away from a person who is sick."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "What can I do to protect myself and prevent the spread of disease?",
+            "patterns": [
+                "What can I do to protect myself and prevent the spread of disease",
+                "Protection measures for everyone",
+                "prevent the spread of disease"
+            ],
+            "responses": [
+                "Stay aware of the latest information on the COVID-19 outbreak and through your national and local public health authority. Many countries around the world have seen cases of COVID-19 and several have seen outbreaks. Authorities in China and some other countries have succeeded in slowing or stopping their outbreaks. However, the situation is unpredictable so check regularly for the latest news.You can reduce your chances of being infected or spreading COVID-19 by taking some simple precautions:Regularly and thoroughly clean your hands with an alcohol-based hand rub or wash them with soap and water.Why? Washing your hands with soap and water or using alcohol-based hand rub kills viruses that may be on your hands.Maintain at least 1 metre (3 feet) distance between yourself and anyone who is coughing or sneezing.Why? When someone coughs or sneezes they spray small liquid droplets from their nose or mouth which may contain virus. If you are too close, you can breathe in the droplets, including the COVID-19 virus if the person coughing has the disease.Avoid touching eyes, nose and mouth.Why? Hands touch many surfaces and can pick up viruses. Once contaminated, hands can transfer the virus to your eyes, nose or mouth. From there, the virus can enter your body and can make you sick.Make sure you, and the people around you, follow good respiratory hygiene. This means covering your mouth and nose with your bent elbow or tissue when you cough or sneeze. Then dispose of the used tissue immediately.Why? Droplets spread virus. By following good respiratory hygiene you protect the people around you from viruses such as cold, flu and COVID 19.Stay home if you feel unwell. If you have a fever, cough and difficulty breathing, seek medical attention and call in advance. Follow the directions of your local health authority.Why? National and local authorities will have the most up to date information on the situation in your area. Calling in advance will allow your health care provider to quickly direct you to the right health facility. This will also protect you and help prevent spread of viruses and other infections.Keep up to date on the latest COVID-19 hotspots (cities or local areas where COVID-19 is spreading widely). If possible, avoid traveling to places  â€“ especially if you are an older person or have diabetes, heart or lung disease.Why? You have a higher chance of catching COVID 19 in one of these areas"
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "How likely am I to catch COVID-19?",
+            "patterns": [
+                "How likely am I to catch COVID 19",
+                "How likely am I to catch coronavirus",
+                "effected by coronavirus"
+            ],
+            "responses": [
+                "The risk depends on where you  are - and more specifically, whether there is a COVID-19 outbreak unfolding there.For most people in most locations the risk of catching COVID-19 is still low. However, there are now places around the world (cities or areas) where the disease is spreading. For people living in, or visiting, these areas the risk of catching COVID-19 is higher. Governments and health authorities are taking vigorous action every time a new case of COVID-19 is identified. Be sure to comply with any local restrictions on travel, movement or large gatherings. Cooperating with disease control efforts will reduce your risk of catching or spreading COVID-19.COVID-19 outbreaks can be contained and transmission stopped, as has been shown in China and some other countries. Unfortunately, new outbreaks can emerge rapidly. Itâ€™s important to be aware of the situation where you are or intend to go. WHO publishes daily updates on the COVID-19 situation worldwide."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "Should I worry about COVID-19",
+            "patterns": [
+                "Should I worry about COVID 19",
+                "Should I worry about coronavirus"
+            ],
+            "responses": [
+                "Illness due to COVID-19 infection is generally mild, especially for children and young adults. However, it can cause serious illness: about 1 in every 5 people who catch it need hospital care. It is therefore quite normal for people to worry about how the COVID-19 outbreak will affect them and their loved ones.We can channel our concerns into actions to protect ourselves, our loved ones and our communities. First and foremost among these actions is regular and thorough hand-washing and good respiratory hygiene. Secondly, keep informed and follow the advice of the local health authorities including any restrictions put in place on travel, movement and gatherings.,"
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "Are antibiotics effective in preventing or treating the COVID-19",
+            "patterns": [
+                "antibiotics effective in preventing treating the COVID 19",
+                "antibiotics effective in preventing treating the coronavirus",
+                "antibiotic effective in coronavirus"
+            ],
+            "responses": [
+                "No. Antibiotics do not work against viruses, they only work on bacterial infections. COVID-19 is caused by a virus, so antibiotics do not work. Antibiotics should not be used as a means of prevention or treatment of COVID-19. They should only be used as directed by a physician to treat a bacterial infection. "
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "Are there any medicines or therapies that can prevent or cure COVID-19",
+            "patterns": [
+                "Are there any medicines or therapies that can prevent or cure COVID 19",
+                "Are there any medicines or therapies that can prevent or cure coronavirus"
+            ],
+            "responses": [
+                "While some western, traditional or home remedies may provide comfort and alleviate symptoms of COVID-19, there is no evidence that current medicine can prevent or cure the disease. WHO does not recommend self-medication with any medicines, including antibiotics, as a prevention or cure for COVID-19. However, there are several ongoing clinical trials that include both western and traditional medicines. WHO will continue to provide updated information as soon as clinical findings are available."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "Is there a vaccine, drug or treatment for COVID-19",
+            "patterns": [
+                "Is there a vaccine, drug or treatment for COVID 19",
+                "Is there a vaccine, drug or treatment for coronavirus",
+                " It is still possible to get COVID-19 after being fully vaccinated, but the risk is much lower. If you do get infected after vaccination, you are less likely to have severe illness, hospitalization, or death."
+            ],
+            "responses": [
+                "Not yet. To date, there is no vaccine and no specific antiviral medicine to prevent or treat COVID-2019. However, those affected should receive care to relieve symptoms. People with serious illness should be hospitalized. Most patients recover thanks to supportive care.Possible vaccines and some specific drug treatments are under investigation. They are being tested through clinical trials. WHO is coordinating efforts to develop vaccines and medicines to prevent and treat COVID-19.The most effective ways to protect yourself and others against COVID-19 are to frequently clean your hands, cover your cough with the bend of elbow or tissue, and maintain a distance of at least 1 meter (3 feet) from people who are coughing or sneezing"
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "covid 19 treatment",
+            "patterns": [
+                "How is COVID-19 treated",
+                "what are the way to treat covid-19",
+                "way of covid-19 treatments"
+            ],
+            "responses": [
+                "There is no specific treatment for COVID-19, but supportive care can be given to relieve symptoms. In severe cases, hospitalization may be necessary."
+            ]
+        },
+        {
+            "tag": "covid-19 variants",
+            "patterns": [
+                "what are the variants",
+                "tell me some covid 19 variants"
+            ],
+            "responses": [
+                "COVID-19 variants are new strains of the virus that have developed mutations that make them different from the original strain. Some variants may be more transmissible or cause more severe disease"
+            ]
+        },
+        {
+            "tag": "covid-19 diagnosed",
+            "patterns": [
+                "How is COVID-19 diagnosed",
+                "ways to do covid 19 diagonsis"
+            ],
+            "responses": [
+                " COVID-19 is diagnosed through a molecular or antigen test, which detect the presence of the virus in respiratory samples."
+            ]
+        },
+        {
+            "tag": "COVID-19 vaccines cause side effects",
+            "patterns": [
+                "Can COVID-19 vaccines cause side effects?",
+                "what are the side effects of covid-19 vaccines"
+            ],
+            "responses": [
+                " Yes, COVID-19 vaccines can cause side effects such as fever, fatigue, headache, muscle aches, and soreness at the injection site. These side effects are usually mild and go away on their own within a few days"
+            ]
+        },
+        {
+            "tag": "number of vaccine required",
+            "patterns": [
+                "How many doses of covid-19 vaccine are required",
+                "can i take 4 doses of vaccine"
+            ],
+            "responses": [
+                " The number of doses required depends on the type of vaccine. The Pfizer and Moderna vaccines require two doses, while the Johnson & Johnson vaccine requires one dose."
+            ]
+        },
+        {
+            "tag": "COVID-19 vaccines work",
+            "patterns": [
+                "How do COVID-19 vaccines work?"
+            ],
+            "responses": [
+                "COVID-19 vaccines work by introducing a small piece of the virus (usually the spike protein) or a weakened version of the virus into the body, which prompts the immune system to produce antibodies and other immune cells that can recognize and fight off the virus if you are exposed to it in the future."
+            ]
+        },
+        {
+            "tag": " COVID-19 vaccines safe",
+            "responses": [
+                "Are COVID-19 vaccines safe",
+                "safety details of covid 19 vaccines"
+            ],
+            "patterns": [
+                "Yes, COVID-19 vaccines have undergone rigorous testing and evaluation to ensure their safety and effectiveness. They have been authorized for emergency use by regulatory agencies in many countries, including the FDA in the United States and the European Medicines Agency in Europe."
+            ]
+        },
+        {
+            "tag": "social distancing",
+            "patterns": [
+                "Do I still need to wear a mask and practice social distancing after getting vaccinated?"
+            ],
+            "responses": [
+                " It depends on the local regulations and the prevalence of COVID-19 in your community. In general, vaccinated individuals have a lower risk of getting infected with COVID-19 and spreading the virus to others, but it is still possible. Therefore, it is important to follow the guidelines from local health authorities, which may include wearing masks and practicing social distancing in certain situations."
+            ]
+        },
+        {
+            "tag": "effect of covid 19 vaccine on immunity",
+            "patterns": [
+                "How long does immunity from the COVID-19 vaccine last",
+                "long term effect of covid 19 vaccine on immunity"
+            ],
+            "responses": [
+                "It is currently unclear how long immunity from the COVID-19 vaccine lasts, as it is a new vaccine.",
+                " However, studies have shown that the vaccine provides strong protection against COVID-19 for at least six months after vaccination, and booster shots are being developed to provide additional protection."
+            ]
+        },
+        {
+            "tag": "pregnant or breastfeeding women get the COVID-19 vaccine",
+            "patterns": [
+                "Can pregnant or breastfeeding women get the COVID-19 vaccine?",
+                "is it having any issues of covid 19 vaccine on women who is pregnant"
+            ],
+            "responses": [
+                " Pregnant or breastfeeding women can receive the COVID-19 vaccine, but they should consult with their healthcare provider before getting vaccinated."
+            ]
+        },
+        {
+            "tag": "effect on covid 19 vaccine",
+            "patterns": [
+                "Can children get the COVID-19 vaccine",
+                "how covid 19 vaccine affect on children"
+            ],
+            "responses": [
+                "The Pfizer-BioNTech vaccine has been authorized for emergency use in children aged 5 to 11 in some countries, while the Moderna and Johnson & Johnson vaccines are authorized for use in people aged 18 and older."
+            ]
+        },
+        {
+            "tag": "covid 19 spread",
+            "patterns": [
+                "How does COVID-19 spread?",
+                "Can COVID-19 be spread through food?"
+            ],
+            "responses": [
+                "COVID-19 is primarily spread through respiratory droplets when an infected person talks, coughs, or sneezes. It can also spread by touching surfaces contaminated with the virus and then touching your mouth, nose, or eyes.",
+                "Currently, there is no evidence that COVID-19 can be spread through food or food packaging. However, it is important to practice good food safety practices such as washing your hands and surfaces before preparing food."
+            ]
+        },
+        {
+            "tag": "economic effect of covid 19",
+            "patterns": [
+                "What is the economic impact of COVID-19",
+                "major effect of covid 19 on ecomomic"
+            ],
+            "responses": [
+                "COVID-19 has had a significant economic impact globally, with businesses shutting down, people losing jobs, and entire industries being disrupted.",
+                " Governments and organizations have implemented various measures to mitigate the economic impact, such as stimulus packages and unemployment benefits."
+            ]
+        },
+        {
+            "tag": "future of covid 19",
+            "patterns": [
+                "What is the future outlook for COVID-19"
+            ],
+            "responses": [
+                " While it is difficult to predict with certainty, experts believe that COVID-19 will likely continue to be a threat for some time. However, with ongoing vaccination efforts and continued public health measures, it is hoped that the pandemic can be brought under control."
+            ]
+        },
+        {
+            "tag": "COVID-19 on mental health",
+            "patterns": [
+                "What is the impact of COVID-19 on mental health"
+            ],
+            "responses": [
+                "The pandemic has had a significant impact on mental health, with many people experiencing increased levels of anxiety, depression, and stress. It has also exacerbated existing mental health conditions and created new ones."
+            ]
+        },
+        {
+            "tag": "deal with the stress and anxiety related to COVID-19 vaccine",
+            "patterns": [
+                "How can people deal with the stress and anxiety related to COVID-19 vaccine eligibility and availability"
+            ],
+            "responses": [
+                "The uncertainty around vaccine eligibility and availability can be stressful and anxiety-inducing.",
+                "People can seek information from reliable sources, prioritize self-care activities, and practice patience and resilience while waiting for vaccination opportunities."
+            ]
+        },
+        {
+            "tag": "manage the fear and uncertainty covid 19",
+            "patterns": [
+                "How can people manage the fear and uncertainty surrounding COVID-19",
+                "how can I manage fear of covid 19"
+            ],
+            "responses": [
+                "The fear and uncertainty surrounding COVID-19 can be challenging to manage. People can try to focus on what they can control, stay informed from reliable sources, and practice self-care activities like exercise, meditation, and mindfulness"
+            ]
+        },
+        {
+            "tag": "loss of loved ones due to COVID-19",
+            "patterns": [
+                "How can people deal with the loss of loved ones due to COVID-19",
+                "what are the ways to deal with the loss of loved due to covid 19"
+            ],
+            "responses": [
+                "Losing a loved one due to COVID-19 can be incredibly challenging and emotionally overwhelming. People can seek support from family and friends, join support groups, and consider professional counseling to help them through the grieving process"
+            ]
+        },
+        {
+            "tag": "cope of covid 19",
+            "patterns": [
+                " what can people do to cope from covid 19"
+            ],
+            "responses": [
+                "COVID-19 has had a significant impact on mental health, with many people experiencing increased levels of anxiety, depression, and stress.",
+                " To cope with the emotional impact, people can try to maintain a routine, stay connected with loved ones, practice self-care, and seek professional help if needed."
+            ]
+        },
+        {
+            "tag": "COVID-19 treatments details",
+            "patterns": [
+                "give me some details related to treatements on covid 19",
+                "way to treat covid 19 diseases"
+            ],
+            "responses": [
+                "While vaccination is the most effective way to prevent severe illness and death from COVID-19, several treatments are available for people who become infected. These include monoclonal antibody treatments, antiviral medications, and corticosteroids."
+            ]
+        },
+        {
+            "tag": "COVID-19 and travel",
+            "patterns": [
+                "how covid 19 has affected the travels sector",
+                "impact of covid 19 on travels in short"
+            ],
+            "responses": [
+                "The pandemic has had a significant impact on travel, with many countries implementing restrictions on entry and requiring proof of vaccination or negative COVID-19 test results for entry.",
+                " It is important to stay up to date on the latest travel guidelines and restrictions before planning any trips."
+            ]
+        },
+        {
+            "tag": "Variants of concern",
+            "patterns": [
+                "what are the concern realted to variants of covid",
+                "tell me about variants concerns"
+            ],
+            "responses": [
+                "Since the emergence of the SARS-CoV-2 virus, several variants have emerged that are of concern due to their potential to spread more easily or cause more severe illness. ",
+                "Some of the most notable variants include the Delta variant, first identified in India, and the Omicron variant, first identified in South Africa."
+            ]
+        },
+        {
+            "tag": "",
+            "patterns": [
+                ""
+            ]
+        },
+        {
+            "tag": "noanswer",
+            "patterns": [],
+            "responses": [
+                "Sorry, can't understand you",
+                "Please give me more info",
+                "Not sure I understand"
+            ],
+            "context": [
+                ""
+            ]
+        }
+    ]
+}
