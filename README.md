@@ -23,7 +23,7 @@ This website provides services for different modules related to Health-Care sect
 
 
 # Getting Started
-To use the website, you can visit the website by navigating to [insert website URL]. You will be presented with a homepage that allows you to select which prediction you would like to make.
+To use the website, you can visit the website by running the 'app.py' file . You will be presented with a homepage that allows you to select which prediction you would like to make.
 Enjoy!
 
 
@@ -47,14 +47,6 @@ TensorFlow
 Keras
 
 
-# Authors
-[insert your name and contact information here]
-
-# Acknowledgments
-[insert any acknowledgments here]
-
-# License
-This project is licensed under the [insert license here] license - see the LICENSE.md file for details.
 
 * Link to access all pre-trained models:
 https://drive.google.com/drive/folders/1AsomE9SA11_ekpMQh7Gi39wf7t69TZjO?usp=sharing
